@@ -1,0 +1,68 @@
+SQL> edit query1
+
+SQL> @query1;
+
+MID        MOVIE_NAME                     CATEGORY                              
+---------- ------------------------------ ------------------------------        
+M001       PPP                            ACTION                                
+M003       RRR                            ACTION                                
+M005       SSS                            SUSPENCE                              
+
+SQL> edit query1
+
+SQL> edit query1
+
+SQL> edit query2
+
+SQL> @query2;
+
+MID        MOVIE_NAME                     CATEGORY                              
+---------- ------------------------------ ------------------------------        
+RELEASED_                                                                       
+---------                                                                       
+M002       QQQ                            DRAMA                                 
+20-FEB-10                                                                       
+                                                                                
+
+SQL> set line200
+SQL> @query2;
+
+MID        MOVIE_NAME                     CATEGORY                       RELEASED_                                                                                                                      
+---------- ------------------------------ ------------------------------ ---------                                                                                                                      
+M002       QQQ                            DRAMA                          20-FEB-10                                                                                                                      
+
+SQL> edit query2
+
+SQL> 
+SQL> edit query3
+
+SQL> @query3;
+
+DID        DNAME                          DCITY                                                                                                                                                         
+---------- ------------------------------ ------------------------------                                                                                                                                
+D001       JHON                           MUMBAI                                                                                                                                                        
+
+SQL> edit query3
+
+SQL> @query3;
+
+DID        DNAME                          DCITY                                                                                                                                                         
+---------- ------------------------------ ------------------------------                                                                                                                                
+D003       STEPHEN                        KOLKATA                                                                                                                                                       
+D002       MARK                           CHENNAI                                                                                                                                                       
+
+SQL> edit query3
+
+SQL> edit query3
+
+SQL> edit query4
+
+SQL> @query4;
+
+DID        DNAME                          DCITY                                                                                                                                                         
+---------- ------------------------------ ------------------------------                                                                                                                                
+D001       JHON                           MUMBAI                                                                                                                                                        
+
+SQL> edit query4
+
+SQL> exit

@@ -1,0 +1,584 @@
+SQL> @movie
+constraint dddidfk foreign key(did) references directors on delete cascade,
+                                               *
+ERROR at line 5:
+ORA-00942: table or view does not exist 
+
+
+SQL> @direstors
+SP2-0310: unable to open file "direstors.sql"
+SQL> @directors
+
+Table created.
+
+SQL> @insert_directors
+Enter value for director_id: D001
+Enter value for director_name: JHON
+Enter value for director_city: MUMBAI
+old   2: values('&Director_id','&Director_name','&Director_city')
+new   2: values('D001','JHON','MUMBAI')
+
+1 row created.
+
+SQL> /
+Enter value for director_id: D002
+Enter value for director_name: MARK
+Enter value for director_city: CHENNAI
+old   2: values('&Director_id','&Director_name','&Director_city')
+new   2: values('D002','MARK','CHENNAI')
+
+1 row created.
+
+SQL> /
+Enter value for director_id: D003
+Enter value for director_name: STEPHEN
+Enter value for director_city: KOLKOTA
+old   2: values('&Director_id','&Director_name','&Director_city')
+new   2: values('D003','STEPHEN','KOLKOTA')
+
+1 row created.
+
+SQL> /
+Enter value for director_id: D004
+Enter value for director_name: PETER
+Enter value for director_city: DELHI
+old   2: values('&Director_id','&Director_name','&Director_city')
+new   2: values('D004','PETER','DELHI')
+
+1 row created.
+
+SQL> @INSERT_STUDIO
+Enter value for studio_id: S001
+Enter value for studio_name: RAJKAMAL
+Enter value for studio_city: MUMBAI
+old   2: values('&Studio_ID','&Studio_name','&Studio_City')
+new   2: values('S001','RAJKAMAL','MUMBAI')
+insert into studio
+            *
+ERROR at line 1:
+ORA-00942: table or view does not exist 
+
+
+SQL> EDIT STUDIO
+
+SQL> @insert_studio
+Enter value for studio_id: S001
+Enter value for studio_name: RAJKAMAL
+Enter value for studio_city: MUMBAI
+old   2: values('&Studio_ID','&Studio_name','&Studio_City')
+new   2: values('S001','RAJKAMAL','MUMBAI')
+insert into studio
+            *
+ERROR at line 1:
+ORA-00942: table or view does not exist 
+
+
+SQL> edit insert_studio
+
+SQL> @insert_studio
+Enter value for studio_id: S001
+Enter value for studio_name: RAJKAMAL
+Enter value for studio_city: MUMBAI
+old   2: values('&Studio_ID','&Studio_name','&Studio_City')
+new   2: values('S001','RAJKAMAL','MUMBAI')
+insert into studio
+            *
+ERROR at line 1:
+ORA-00942: table or view does not exist 
+
+
+SQL> edit studio
+
+SQL> @studio
+
+Table created.
+
+SQL> @insert_studio
+Enter value for studio_id: S001
+Enter value for studio_name: RAJKAMAL
+Enter value for studio_city: MUMBAI
+old   2: values('&Studio_ID','&Studio_name','&Studio_City')
+new   2: values('S001','RAJKAMAL','MUMBAI')
+
+1 row created.
+
+SQL> /
+Enter value for studio_id: S002
+Enter value for studio_name: FILMCITY
+Enter value for studio_city: HEDRABAD
+old   2: values('&Studio_ID','&Studio_name','&Studio_City')
+new   2: values('S002','FILMCITY','HEDRABAD')
+
+1 row created.
+
+SQL> /
+Enter value for studio_id: S003
+Enter value for studio_name: MEHBOOB
+Enter value for studio_city: MUMBAI
+old   2: values('&Studio_ID','&Studio_name','&Studio_City')
+new   2: values('S003','MEHBOOB','MUMBAI')
+
+1 row created.
+
+SQL> @theatre
+
+Table created.
+
+SQL> @insert_theatre
+Enter value for theatre_id: T001
+Enter value for theatre_name: MONA
+Enter value for theatre_city: PATNA
+old   2: values('&Theatre_Id','&Theatre_name','&Theatre_City')
+new   2: values('T001','MONA','PATNA')
+
+1 row created.
+
+SQL> /
+Enter value for theatre_id: T002
+Enter value for theatre_name: REGENT
+Enter value for theatre_city: PATNA
+old   2: values('&Theatre_Id','&Theatre_name','&Theatre_City')
+new   2: values('T002','REGENT','PATNA')
+
+1 row created.
+
+SQL> /
+Enter value for theatre_id: T003
+Enter value for theatre_name: VEENA
+Enter value for theatre_city: PATNA
+old   2: values('&Theatre_Id','&Theatre_name','&Theatre_City')
+new   2: values('T003','VEENA','PATNA')
+
+1 row created.
+
+SQL> /
+Enter value for theatre_id: T004
+Enter value for theatre_name: CINEPOLIES
+Enter value for theatre_city: PATNA
+old   2: values('&Theatre_Id','&Theatre_name','&Theatre_City')
+new   2: values('T004','CINEPOLIES','PATNA')
+
+1 row created.
+
+SQL> @SHOWING
+ constraint mid_fk foreign key(mid) references movie on delete cascade)
+                                               *
+ERROR at line 3:
+ORA-00942: table or view does not exist 
+
+
+SQL> @MOVIE
+
+Table created.
+
+SQL> @INSERT_MOVIE
+Enter value for mid: M001
+Enter value for movie_name: PPP
+Enter value for category: ACTION
+Enter value for cost: 90000000
+Enter value for relesed_date: 13-JAN-2010
+Enter value for did: D002
+Enter value for studio_id: S003
+old   2: values('&mid','&movie_name','&Category',&cost,'&Relesed_date','&did','&Studio_id')
+new   2: values('M001','PPP','ACTION',90000000,'13-JAN-2010','D002','S003')
+
+1 row created.
+
+SQL> /
+Enter value for mid: M002
+Enter value for movie_name: QQQ
+Enter value for category: DRAMA
+Enter value for cost: 60000000
+Enter value for relesed_date: 20-FEB-2011
+Enter value for did: D001
+Enter value for studio_id: S001
+old   2: values('&mid','&movie_name','&Category',&cost,'&Relesed_date','&did','&Studio_id')
+new   2: values('M002','QQQ','DRAMA',60000000,'20-FEB-2011','D001','S001')
+
+1 row created.
+
+SQL> /
+Enter value for mid: M003
+Enter value for movie_name: RRR
+Enter value for category: ACTION
+Enter value for cost: 70000000
+Enter value for relesed_date: 15-JAN-2009
+Enter value for did: D002
+Enter value for studio_id: S003
+old   2: values('&mid','&movie_name','&Category',&cost,'&Relesed_date','&did','&Studio_id')
+new   2: values('M003','RRR','ACTION',70000000,'15-JAN-2009','D002','S003')
+
+1 row created.
+
+SQL> /
+Enter value for mid: M004
+Enter value for movie_name: TTT
+Enter value for category: DRAMA
+Enter value for cost: 40000000
+Enter value for relesed_date: 18-DEC-2009
+Enter value for did: D001
+Enter value for studio_id: S001
+old   2: values('&mid','&movie_name','&Category',&cost,'&Relesed_date','&did','&Studio_id')
+new   2: values('M004','TTT','DRAMA',40000000,'18-DEC-2009','D001','S001')
+
+1 row created.
+
+SQL> /
+Enter value for mid: M005
+Enter value for movie_name: SSS
+Enter value for category: SUSPENCE
+Enter value for cost: 30000000
+Enter value for relesed_date: 2-JAN-2000
+Enter value for did: D003
+Enter value for studio_id: S001
+old   2: values('&mid','&movie_name','&Category',&cost,'&Relesed_date','&did','&Studio_id')
+new   2: values('M005','SSS','SUSPENCE',30000000,'2-JAN-2000','D003','S001')
+
+1 row created.
+
+SQL> /
+Enter value for mid: M006
+Enter value for movie_name: NNN
+Enter value for category: SUSPENCE
+Enter value for cost: 10000000
+Enter value for relesed_date: 5-JUL-2008
+Enter value for did: D001
+Enter value for studio_id: S001
+old   2: values('&mid','&movie_name','&Category',&cost,'&Relesed_date','&did','&Studio_id')
+new   2: values('M006','NNN','SUSPENCE',10000000,'5-JUL-2008','D001','S001')
+
+1 row created.
+
+SQL> @INSERT_SHOWING
+SP2-0310: unable to open file "INSERT_SHOWING.sql"
+SQL> EDIT INSERT_SHOWING
+
+SQL> @INSERT_SHOWING
+Enter value for theater_id: T001
+Enter value for movi_id: M001
+Enter value for collection: 20000000
+old   2: values('&Theater_id','&Movi_id',&collection)
+new   2: values('T001','M001',20000000)
+insert into showing
+            *
+ERROR at line 1:
+ORA-00942: table or view does not exist 
+
+
+SQL> @SHOWING
+
+Table created.
+
+SQL> @INSERT_SHOWING
+Enter value for theater_id: T001
+Enter value for movi_id: M001
+Enter value for collection: 20000000
+old   2: values('&Theater_id','&Movi_id',&collection)
+new   2: values('T001','M001',20000000)
+values('T001','M001',20000000)
+              *
+ERROR at line 2:
+ORA-01722: invalid number 
+
+
+SQL> EDIT INSERT_SHOWING
+
+SQL> @INSERT_SHOWING
+Enter value for theater_id: T001
+Enter value for movie_id: M001
+Enter value for collection: 20000000
+old   2: values('&Theater_id','&Movie_id',&collection)
+new   2: values('T001','M001',20000000)
+values('T001','M001',20000000)
+              *
+ERROR at line 2:
+ORA-01722: invalid number 
+
+
+SQL> SELECT*FROM MOVIE;
+
+MID        MOVIE_NAME                     CATEGORY                              
+---------- ------------------------------ ------------------------------        
+      COST RELEASED_ DID        STUDIO_ID                                       
+---------- --------- ---------- ----------                                      
+M001       PPP                            ACTION                                
+  90000000 13-JAN-10 D002       S003                                            
+                                                                                
+M002       QQQ                            DRAMA                                 
+  60000000 20-FEB-11 D001       S001                                            
+                                                                                
+M003       RRR                            ACTION                                
+  70000000 15-JAN-09 D002       S003                                            
+                                                                                
+
+MID        MOVIE_NAME                     CATEGORY                              
+---------- ------------------------------ ------------------------------        
+      COST RELEASED_ DID        STUDIO_ID                                       
+---------- --------- ---------- ----------                                      
+M004       TTT                            DRAMA                                 
+  40000000 18-DEC-09 D001       S001                                            
+                                                                                
+M005       SSS                            SUSPENCE                              
+  30000000 02-JAN-00 D003       S001                                            
+                                                                                
+M006       NNN                            SUSPENCE                              
+  10000000 05-JUL-08 D001       S001                                            
+                                                                                
+
+6 rows selected.
+
+SQL> SET LINESIZE200
+SQL> SELECT*FROM MOVIE;
+
+MID        MOVIE_NAME                     CATEGORY                             COST RELEASED_ DID        STUDIO_ID                                                                                      
+---------- ------------------------------ ------------------------------ ---------- --------- ---------- ----------                                                                                     
+M001       PPP                            ACTION                           90000000 13-JAN-10 D002       S003                                                                                           
+M002       QQQ                            DRAMA                            60000000 20-FEB-11 D001       S001                                                                                           
+M003       RRR                            ACTION                           70000000 15-JAN-09 D002       S003                                                                                           
+M004       TTT                            DRAMA                            40000000 18-DEC-09 D001       S001                                                                                           
+M005       SSS                            SUSPENCE                         30000000 02-JAN-00 D003       S001                                                                                           
+M006       NNN                            SUSPENCE                         10000000 05-JUL-08 D001       S001                                                                                           
+
+6 rows selected.
+
+SQL> @insert_showing
+Enter value for theater_id: T001
+Enter value for movie_id: M001
+Enter value for collection: 20000000
+old   2: values('&Theater_id','&Movie_id',&collection)
+new   2: values('T001','M001',20000000)
+values('T001','M001',20000000)
+              *
+ERROR at line 2:
+ORA-01722: invalid number 
+
+
+SQL> edit showing
+
+SQL> @showing
+create table showing
+             *
+ERROR at line 1:
+ORA-00955: name is already used by an existing object 
+
+
+SQL> drop showing;
+drop showing
+     *
+ERROR at line 1:
+ORA-00950: invalid DROP option 
+
+
+SQL> drop table showing;
+
+Table dropped.
+
+SQL> @showing;
+
+Table created.
+
+SQL> @insert_showing
+Enter value for theater_id: T001
+Enter value for movie_id: M001
+Enter value for collection: 20000000
+old   2: values('&Theater_id','&Movie_id',&collection)
+new   2: values('T001','M001',20000000)
+
+1 row created.
+
+SQL> /
+Enter value for theater_id: T002
+Enter value for movie_id: M001
+Enter value for collection: 30000000
+old   2: values('&Theater_id','&Movie_id',&collection)
+new   2: values('T002','M001',30000000)
+
+1 row created.
+
+SQL> /
+Enter value for theater_id: T001
+Enter value for movie_id: M002
+Enter value for collection: 50000000
+old   2: values('&Theater_id','&Movie_id',&collection)
+new   2: values('T001','M002',50000000)
+
+1 row created.
+
+SQL> /
+Enter value for theater_id: T002
+Enter value for movie_id: M003
+Enter value for collection: 60000000
+old   2: values('&Theater_id','&Movie_id',&collection)
+new   2: values('T002','M003',60000000)
+
+1 row created.
+
+SQL> /
+Enter value for theater_id: T004
+Enter value for movie_id: M002
+Enter value for collection: 40000000
+old   2: values('&Theater_id','&Movie_id',&collection)
+new   2: values('T004','M002',40000000)
+
+1 row created.
+
+SQL> /
+Enter value for theater_id: T004
+Enter value for movie_id: M005
+Enter value for collection: 20000000
+old   2: values('&Theater_id','&Movie_id',&collection)
+new   2: values('T004','M005',20000000)
+
+1 row created.
+
+SQL> SELECT*FROM SHOWING;
+
+TID        MID              COLL                                                                                                                                                                        
+---------- ---------- ----------                                                                                                                                                                        
+T001       M001         20000000                                                                                                                                                                        
+T002       M001         30000000                                                                                                                                                                        
+T001       M002         50000000                                                                                                                                                                        
+T002       M003         60000000                                                                                                                                                                        
+T004       M002         40000000                                                                                                                                                                        
+T004       M005         20000000                                                                                                                                                                        
+
+6 rows selected.
+
+SQL> edit query_in_opr1
+
+SQL> @query_in_opr1
+
+DID        DNAME                          DCITY                                                                                                                                                         
+---------- ------------------------------ ------------------------------                                                                                                                                
+D001       JHON                           MUMBAI                                                                                                                                                        
+D003       STEPHEN                        KOLKOTA                                                                                                                                                       
+
+SQL> edit query_in_opr1
+
+SQL> edit query2_in_opr
+
+SQL> @query2_in_opr
+select *from director
+             *
+ERROR at line 1:
+ORA-00942: table or view does not exist 
+
+
+SQL> edit query2_in_opr
+
+SQL> @query2_in_opr
+
+DID        DNAME                          DCITY                                                                                                                                                         
+---------- ------------------------------ ------------------------------                                                                                                                                
+D003       STEPHEN                        KOLKOTA                                                                                                                                                       
+D002       MARK                           CHENNAI                                                                                                                                                       
+D001       JHON                           MUMBAI                                                                                                                                                        
+
+SQL> edit query2_in_opr
+
+SQL> edit query3_in_opr
+
+SQL> @query3_in_opr
+select movie_id,movie_name from movie
+       *
+ERROR at line 1:
+ORA-00904: "MOVIE_ID": invalid identifier 
+
+
+SQL> edit query3_in_opr
+
+SQL> select*from movie;
+
+MID        MOVIE_NAME                     CATEGORY                             COST RELEASED_ DID        STUDIO_ID                                                                                      
+---------- ------------------------------ ------------------------------ ---------- --------- ---------- ----------                                                                                     
+M001       PPP                            ACTION                           90000000 13-JAN-10 D002       S003                                                                                           
+M002       QQQ                            DRAMA                            60000000 20-FEB-11 D001       S001                                                                                           
+M003       RRR                            ACTION                           70000000 15-JAN-09 D002       S003                                                                                           
+M004       TTT                            DRAMA                            40000000 18-DEC-09 D001       S001                                                                                           
+M005       SSS                            SUSPENCE                         30000000 02-JAN-00 D003       S001                                                                                           
+M006       NNN                            SUSPENCE                         10000000 05-JUL-08 D001       S001                                                                                           
+
+6 rows selected.
+
+SQL> edit query3_in_opr
+
+SQL> @query3_in_opr
+
+Movie_id   MOVIE_NAME                                                                                                                                                                                   
+---------- ------------------------------                                                                                                                                                               
+M004       TTT                                                                                                                                                                                          
+M006       NNN                                                                                                                                                                                          
+
+SQL> edit query3_in_opr
+
+SQL> edit query4_in_opr
+
+SQL> @query4_in_opr
+
+TID        TNAME                          TCITY                                                                                                                                                         
+---------- ------------------------------ --------------------                                                                                                                                          
+T001       MONA                           PATNA                                                                                                                                                         
+T002       REGENT                         PATNA                                                                                                                                                         
+T004       CINEPOLIES                     PATNA                                                                                                                                                         
+
+SQL> edit query4_in_opr
+
+SQL> edit query5_in_opr
+
+SQL> @query5_in_opr
+	where tid not in(select distnict tid from showing)
+	                        *
+ERROR at line 2:
+ORA-00904: "DISTNICT": invalid identifier 
+
+
+SQL> edit query5_in_opr
+
+SQL> @query5_in_opr
+
+TID        TNAME                          TCITY                                                                                                                                                         
+---------- ------------------------------ --------------------                                                                                                                                          
+T003       VEENA                          PATNA                                                                                                                                                         
+
+SQL> edit query5_in_opr
+
+SQL> edit query6_in_opr
+
+SQL> @query6_in_opr
+where did in(selcet distinct did from movie
+                    *
+ERROR at line 2:
+ORA-00907: missing right parenthesis 
+
+
+SQL> edit query6_in_opr
+
+SQL> @query6_in_opr
+where did in(selcet distinct did from movie
+                    *
+ERROR at line 2:
+ORA-00907: missing right parenthesis 
+
+
+SQL> edit query6_in_opr
+
+SQL> edit query6_in_opr
+
+SQL> @query6_in_opr
+where did in(selcet  did from movie
+                     *
+ERROR at line 2:
+ORA-00907: missing right parenthesis 
+
+
+SQL> edit query6_in_opr
+
+SQL> @query6_in_opr
+
+DID        DNAME                          DCITY                                                                                                                                                         
+---------- ------------------------------ ------------------------------                                                                                                                                
+D001       JHON                           MUMBAI                                                                                                                                                        
+
+SQL> edit query6_in_opr
+
+SQL> exit

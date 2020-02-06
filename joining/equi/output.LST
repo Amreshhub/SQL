@@ -1,0 +1,276 @@
+SQL> clear screen
+
+SQL> edit employees
+
+SQL> @employees
+
+Table created.
+
+SQL>  desc employees;
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ ECODE                                     NOT NULL VARCHAR2(4)
+ ENAME                                     NOT NULL VARCHAR2(10)
+ POST                                      NOT NULL VARCHAR2(10)
+
+SQL> edit insert_employees
+
+SQL> @insert_employees
+Enter value for ecode: E001
+Enter value for ename: JHON
+Enter value for post: MANAGER
+old   2: values('&Ecode','&Ename','&post')
+new   2: values('E001','JHON','MANAGER')
+
+1 row created.
+
+SQL> /
+Enter value for ecode: EOO2
+Enter value for ename: MARK
+Enter value for post: CLERK
+old   2: values('&Ecode','&Ename','&post')
+new   2: values('EOO2','MARK','CLERK')
+
+1 row created.
+
+SQL> /
+Enter value for ecode: E003
+Enter value for ename: PETER
+Enter value for post: EXECUTIVE
+old   2: values('&Ecode','&Ename','&post')
+new   2: values('E003','PETER','EXECUTIVE')
+
+1 row created.
+
+SQL> /
+Enter value for ecode: E004
+Enter value for ename: STEPHEN
+Enter value for post: EXECUTIVE
+old   2: values('&Ecode','&Ename','&post')
+new   2: values('E004','STEPHEN','EXECUTIVE')
+
+1 row created.
+
+SQL> SELECT *FROM EMPLOYEES;
+
+ECOD ENAME      POST                                                            
+---- ---------- ----------                                                      
+E001 JHON       MANAGER                                                         
+EOO2 MARK       CLERK                                                           
+E003 PETER      EXECUTIVE                                                       
+E004 STEPHEN    EXECUTIVE                                                       
+
+SQL> edit payment;
+
+SQL> @payment;
+(ecode varchar2(4) constraint ecode_ffk refereness employees,month varchar2(10) not null,pmt varchar2(15) not null)
+                   *
+ERROR at line 2:
+ORA-02253: constraint specification not allowed here 
+
+
+SQL> edit payment;
+
+SQL> @payment;
+
+Table created.
+
+SQL> desc payment
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ ECODE                                     NOT NULL VARCHAR2(4)
+ MONTH                                     NOT NULL VARCHAR2(10)
+ PMT                                       NOT NULL VARCHAR2(15)
+
+SQL> clear screen
+
+SQL> edit insert_payment
+
+SQL> @insert_payment;
+Enter value for ecode: E001
+Enter value for month: JUNE
+Enter value for payment: 65000
+old   2: values('&Ecode','&month','&payment')
+new   2: values('E001','JUNE','65000')
+
+1 row created.
+
+SQL> /
+Enter value for ecode: E002
+Enter value for month: JUNE
+Enter value for payment: 5800
+old   2: values('&Ecode','&month','&payment')
+new   2: values('E002','JUNE','5800')
+insert into payment
+*
+ERROR at line 1:
+ORA-02291: integrity constraint (AMRESH.ECODE_FFK) violated - parent key not 
+found 
+
+
+SQL> /
+Enter value for ecode: E002
+Enter value for month: JUNE
+Enter value for payment: 58000
+old   2: values('&Ecode','&month','&payment')
+new   2: values('E002','JUNE','58000')
+insert into payment
+*
+ERROR at line 1:
+ORA-02291: integrity constraint (AMRESH.ECODE_FFK) violated - parent key not 
+found 
+
+
+SQL> edit insert_payment
+
+SQL> clear screen
+
+SQL> @insert_payment;
+Enter value for ecode: E002
+Enter value for month: JUNE
+Enter value for pamt: 58000
+old   2: values('&Ecode','&month','&pamt')
+new   2: values('E002','JUNE','58000')
+insert into payment
+*
+ERROR at line 1:
+ORA-02291: integrity constraint (AMRESH.ECODE_FFK) violated - parent key not 
+found 
+
+
+SQL> SELECT*FROM PAYMENT;
+
+ECOD MONTH      PMT                                                             
+---- ---------- ---------------                                                 
+E001 JUNE       65000                                                           
+
+SQL> edit insert_payment
+
+SQL> @insert_payment;
+Enter value for ecode: E002
+Enter value for month: JUNE
+Enter value for pmt: 5800
+old   2: values('&Ecode','&month','&pmt')
+new   2: values('E002','JUNE','5800')
+insert into payment
+*
+ERROR at line 1:
+ORA-02291: integrity constraint (AMRESH.ECODE_FFK) violated - parent key not 
+found 
+
+
+SQL> edit payment;
+
+SQL> @payment;
+create table payment
+             *
+ERROR at line 1:
+ORA-00955: name is already used by an existing object 
+
+
+SQL> clear screen
+
+SQL> @insert_payment;
+Enter value for ecode: E002
+Enter value for month: JUNE
+Enter value for pmt: 5800
+old   2: values('&Ecode','&month','&pmt')
+new   2: values('E002','JUNE','5800')
+insert into payment
+*
+ERROR at line 1:
+ORA-02291: integrity constraint (AMRESH.ECODE_FFK) violated - parent key not 
+found 
+
+
+SQL> /
+Enter value for ecode: E003
+Enter value for month: JUNE
+Enter value for pmt: 12500
+old   2: values('&Ecode','&month','&pmt')
+new   2: values('E003','JUNE','12500')
+
+1 row created.
+
+SQL> /
+Enter value for ecode: E002
+Enter value for month: JUNE
+Enter value for pmt: 5800
+old   2: values('&Ecode','&month','&pmt')
+new   2: values('E002','JUNE','5800')
+insert into payment
+*
+ERROR at line 1:
+ORA-02291: integrity constraint (AMRESH.ECODE_FFK) violated - parent key not 
+found 
+
+
+SQL> /
+Enter value for ecode: E002
+Enter value for month: JUNE
+Enter value for pmt: 4500
+old   2: values('&Ecode','&month','&pmt')
+new   2: values('E002','JUNE','4500')
+insert into payment
+*
+ERROR at line 1:
+ORA-02291: integrity constraint (AMRESH.ECODE_FFK) violated - parent key not 
+found 
+
+
+SQL> SELECT *FROM PAYMENT
+  2  SELECT *FROM PAYMENT;
+SELECT *FROM PAYMENT
+*
+ERROR at line 2:
+ORA-00933: SQL command not properly ended 
+
+
+SQL> select *from payment;
+
+ECOD MONTH      PMT                                                             
+---- ---------- ---------------                                                 
+E001 JUNE       65000                                                           
+E003 JUNE       12500                                                           
+
+SQL> select *from employees;
+
+ECOD ENAME      POST                                                            
+---- ---------- ----------                                                      
+E001 JHON       MANAGER                                                         
+EOO2 MARK       CLERK                                                           
+E003 PETER      EXECUTIVE                                                       
+E004 STEPHEN    EXECUTIVE                                                       
+
+SQL> @insert_payment;
+Enter value for ecode: EOO2
+Enter value for month: JUNE
+Enter value for pmt: 5800
+old   2: values('&Ecode','&month','&pmt')
+new   2: values('EOO2','JUNE','5800')
+
+1 row created.
+
+SQL> select *from payment;
+
+ECOD MONTH      PMT                                                             
+---- ---------- ---------------                                                 
+E001 JUNE       65000                                                           
+E003 JUNE       12500                                                           
+EOO2 JUNE       5800                                                            
+
+SQL> edit query1;
+
+SQL> clear screen
+
+SQL> @query1;
+
+ECOD ENAME      POST       ECOD MONTH      PMT                                  
+---- ---------- ---------- ---- ---------- ---------------                      
+E001 JHON       MANAGER    E001 JUNE       65000                                
+E003 PETER      EXECUTIVE  E003 JUNE       12500                                
+EOO2 MARK       CLERK      EOO2 JUNE       5800                                 
+
+SQL> edit query1;
+
+SQL> exit

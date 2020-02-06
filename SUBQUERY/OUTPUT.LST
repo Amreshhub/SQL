@@ -1,0 +1,211 @@
+SQL> CLEAR SCREEN
+
+SQL> edit moviess
+
+SQL> @moviess
+
+Table created.
+
+SQL> edit insert_moviess
+
+SQL>  @insert_moviess
+Enter value for movie_id: M001
+Enter value for movie_name: PPP
+Enter value for category: ACTION
+Enter value for cost: 70000000
+Enter value for relesd_date: 18-JAN-2010
+old   2: values('&movie_id','&movie_name','&category',&cost,'&relesd_date')
+new   2: values('M001','PPP','ACTION',70000000,'18-JAN-2010')
+
+1 row created.
+
+SQL> /
+Enter value for movie_id: M002
+Enter value for movie_name: QQQ
+Enter value for category: DRAMA
+Enter value for cost: 90000000
+Enter value for relesd_date: 21-DEC-2010
+old   2: values('&movie_id','&movie_name','&category',&cost,'&relesd_date')
+new   2: values('M002','QQQ','DRAMA',90000000,'21-DEC-2010')
+
+1 row created.
+
+SQL> /
+Enter value for movie_id: M003
+Enter value for movie_name: RRR
+Enter value for category: ACTION
+Enter value for cost: 50000000
+Enter value for relesd_date: 30-DEC-2009
+old   2: values('&movie_id','&movie_name','&category',&cost,'&relesd_date')
+new   2: values('M003','RRR','ACTION',50000000,'30-DEC-2009')
+
+1 row created.
+
+SQL> /
+Enter value for movie_id: M004
+Enter value for movie_name: SSS
+Enter value for category: DRAMA
+Enter value for cost: 30000000
+Enter value for relesd_date: 5-JAN-2009
+old   2: values('&movie_id','&movie_name','&category',&cost,'&relesd_date')
+new   2: values('M004','SSS','DRAMA',30000000,'5-JAN-2009')
+
+1 row created.
+
+SQL> /
+Enter value for movie_id: M005
+Enter value for movie_name: TTT
+Enter value for category: SUSPENCE
+Enter value for cost: 60000000
+Enter value for relesd_date: 17-NOV-2010
+old   2: values('&movie_id','&movie_name','&category',&cost,'&relesd_date')
+new   2: values('M005','TTT','SUSPENCE',60000000,'17-NOV-2010')
+
+1 row created.
+
+SQL> /
+Enter value for movie_id: M006
+Enter value for movie_name: KKK
+Enter value for category: SUSPENCE
+Enter value for cost: 20000000
+Enter value for relesd_date: 18-NOV-2010
+old   2: values('&movie_id','&movie_name','&category',&cost,'&relesd_date')
+new   2: values('M006','KKK','SUSPENCE',20000000,'18-NOV-2010')
+
+1 row created.
+
+SQL> SELECT *FROM MOVIESS;
+
+MID        MOVIE_NAME                     CATEGORY                   COST       
+---------- ------------------------------ -------------------- ----------       
+RELESD_DA                                                                       
+---------                                                                       
+M001       PPP                            ACTION                 70000000       
+18-JAN-10                                                                       
+                                                                                
+M002       QQQ                            DRAMA                  90000000       
+21-DEC-10                                                                       
+                                                                                
+M003       RRR                            ACTION                 50000000       
+30-DEC-09                                                                       
+                                                                                
+
+MID        MOVIE_NAME                     CATEGORY                   COST       
+---------- ------------------------------ -------------------- ----------       
+RELESD_DA                                                                       
+---------                                                                       
+M004       SSS                            DRAMA                  30000000       
+05-JAN-09                                                                       
+                                                                                
+M005       TTT                            SUSPENCE               60000000       
+17-NOV-10                                                                       
+                                                                                
+M006       KKK                            SUSPENCE               20000000       
+18-NOV-10                                                                       
+                                                                                
+
+6 rows selected.
+
+SQL> SET LINESIZE 200
+SQL> SELECT *FROM MOVIESS;
+
+MID        MOVIE_NAME                     CATEGORY                   COST RELESD_DA                                                                                                                     
+---------- ------------------------------ -------------------- ---------- ---------                                                                                                                     
+M001       PPP                            ACTION                 70000000 18-JAN-10                                                                                                                     
+M002       QQQ                            DRAMA                  90000000 21-DEC-10                                                                                                                     
+M003       RRR                            ACTION                 50000000 30-DEC-09                                                                                                                     
+M004       SSS                            DRAMA                  30000000 05-JAN-09                                                                                                                     
+M005       TTT                            SUSPENCE               60000000 17-NOV-10                                                                                                                     
+M006       KKK                            SUSPENCE               20000000 18-NOV-10                                                                                                                     
+
+6 rows selected.
+
+SQL> edit query1
+
+SQL> CLEAR SCREEN
+
+SQL> @query1
+where cost>(select mid from moviess where mid='M001')
+                   *
+ERROR at line 2:
+ORA-01722: invalid number 
+
+
+SQL> edit query1
+
+SQL> @query1
+where cost>(select * from moviess where mid='M001')
+            *
+ERROR at line 2:
+ORA-00913: too many values 
+
+
+SQL> edit query1
+
+SQL> @query1
+where cost>(select moviess from moviess where mid='M001')
+                   *
+ERROR at line 2:
+ORA-00904: "MOVIESS": invalid identifier 
+
+
+SQL> edit query1
+
+SQL> @query1
+
+MID        MOVIE_NAME                     CATEGORY                   COST RELESD_DA                                                                                                                     
+---------- ------------------------------ -------------------- ---------- ---------                                                                                                                     
+M002       QQQ                            DRAMA                  90000000 21-DEC-10                                                                                                                     
+
+SQL> edit query1
+
+SQL> clear screen
+
+SQL> edit query2
+
+SQL> @query2
+
+MID        MOVIE_NAME                     CATEGORY                   COST RELESD_DA                                                                                                                     
+---------- ------------------------------ -------------------- ---------- ---------                                                                                                                     
+M001       PPP                            ACTION                 70000000 18-JAN-10                                                                                                                     
+M002       QQQ                            DRAMA                  90000000 21-DEC-10                                                                                                                     
+M005       TTT                            SUSPENCE               60000000 17-NOV-10                                                                                                                     
+
+SQL> edit query2
+
+SQL> edit query3
+
+SQL> @query3
+
+movie id   MOVIE_NAME                     CATEGORY                                                                                                                                                      
+---------- ------------------------------ --------------------                                                                                                                                          
+M003       RRR                            ACTION                                                                                                                                                        
+M004       SSS                            DRAMA                                                                                                                                                         
+M006       KKK                            SUSPENCE                                                                                                                                                      
+
+SQL> edit query3
+
+SQL> edit query4
+
+SQL> @query4
+
+MID        MOVIE_NAME                     CATEGORY                   COST RELESD_DA                                                                                                                     
+---------- ------------------------------ -------------------- ---------- ---------                                                                                                                     
+M001       PPP                            ACTION                 70000000 18-JAN-10                                                                                                                     
+M002       QQQ                            DRAMA                  90000000 21-DEC-10                                                                                                                     
+
+SQL> edit query4
+
+SQL> clear screen
+
+SQL> edit query5
+
+SQL> @query5
+
+MID        MOVIE_NAME                     CATEGORY                   COST RELESD_DA                                                                                                                     
+---------- ------------------------------ -------------------- ---------- ---------                                                                                                                     
+M002       QQQ                            DRAMA                  90000000 21-DEC-10                                                                                                                     
+
+SQL> edit query5
+
+SQL> exit

@@ -1,0 +1,115 @@
+SQL> edit query1
+
+SQL> @query1
+select *from movies
+             *
+ERROR at line 1:
+ORA-00942: table or view does not exist 
+
+
+SQL> edit query1
+
+SQL> @query1
+
+MID        MOVIE_NAME                     CATEGORY                              
+---------- ------------------------------ ------------------------------        
+      COST RELEASED_ DID        STUDIO_ID                                       
+---------- --------- ---------- ----------                                      
+M002       QQQ                            DRAMA                                 
+  60000000 20-FEB-10 D001       S001                                            
+                                                                                
+M006       NNN                            SUSPENCE                              
+  10000000 05-JUL-08 D001       S001                                            
+                                                                                
+M004       TTT                            DRAMA                                 
+  40000000 18-FEB-09 D001       S001                                            
+                                                                                
+
+MID        MOVIE_NAME                     CATEGORY                              
+---------- ------------------------------ ------------------------------        
+      COST RELEASED_ DID        STUDIO_ID                                       
+---------- --------- ---------- ----------                                      
+M003       RRR                            ACTION                                
+  70000000 15-JAN-09 D002       S003                                            
+                                                                                
+M005       SSS                            SUSPENCE                              
+  30000000 02-JAN-00 D003       S001                                            
+                                                                                
+
+SQL> set line200;
+SQL> @query1
+
+MID        MOVIE_NAME                     CATEGORY                             COST RELEASED_ DID        STUDIO_ID                                                                                      
+---------- ------------------------------ ------------------------------ ---------- --------- ---------- ----------                                                                                     
+M002       QQQ                            DRAMA                            60000000 20-FEB-10 D001       S001                                                                                           
+M006       NNN                            SUSPENCE                         10000000 05-JUL-08 D001       S001                                                                                           
+M004       TTT                            DRAMA                            40000000 18-FEB-09 D001       S001                                                                                           
+M003       RRR                            ACTION                           70000000 15-JAN-09 D002       S003                                                                                           
+M005       SSS                            SUSPENCE                         30000000 02-JAN-00 D003       S001                                                                                           
+
+SQL> edit query1
+
+SQL> @query1
+
+MID        MOVIE_NAME                     CATEGORY                             COST RELEASED_ DID        STUDIO_ID                                                                                      
+---------- ------------------------------ ------------------------------ ---------- --------- ---------- ----------                                                                                     
+M006       NNN                            SUSPENCE                         10000000 05-JUL-08 D001       S001                                                                                           
+M005       SSS                            SUSPENCE                         30000000 02-JAN-00 D003       S001                                                                                           
+M004       TTT                            DRAMA                            40000000 18-FEB-09 D001       S001                                                                                           
+M002       QQQ                            DRAMA                            60000000 20-FEB-10 D001       S001                                                                                           
+M003       RRR                            ACTION                           70000000 15-JAN-09 D002       S003                                                                                           
+
+SQL> edit query1
+
+SQL> @query1
+
+MID        MOVIE_NAME                     CATEGORY                             COST RELEASED_ DID        STUDIO_ID                                                                                      
+---------- ------------------------------ ------------------------------ ---------- --------- ---------- ----------                                                                                     
+M001       PPP                            ACTION                           90000000 13-JAN-10 D002       S003                                                                                           
+M003       RRR                            ACTION                           70000000 15-JAN-09 D002       S003                                                                                           
+M002       QQQ                            DRAMA                            60000000 20-FEB-10 D001       S001                                                                                           
+M004       TTT                            DRAMA                            40000000 18-FEB-09 D001       S001                                                                                           
+M005       SSS                            SUSPENCE                         30000000 02-JAN-00 D003       S001                                                                                           
+
+SQL> edit query1
+
+SQL> @query1
+	where cost<any(select distinct cost from movie)
+	                                              *
+ERROR at line 3:
+ORA-00907: missing right parenthesis 
+
+
+SQL> edit query1
+
+SQL> @query1
+
+MID        MOVIE_NAME                     CATEGORY                             COST RELEASED_ DID        STUDIO_ID                                                                                      
+---------- ------------------------------ ------------------------------ ---------- --------- ---------- ----------                                                                                     
+M001       PPP                            ACTION                           90000000 13-JAN-10 D002       S003                                                                                           
+
+SQL> edit query1
+
+SQL> @query1
+
+MID        MOVIE_NAME                     CATEGORY                             COST RELEASED_ DID        STUDIO_ID                                                                                      
+---------- ------------------------------ ------------------------------ ---------- --------- ---------- ----------                                                                                     
+M001       PPP                            ACTION                           90000000 13-JAN-10 D002       S003                                                                                           
+
+SQL> @query1
+
+MID        MOVIE_NAME                     CATEGORY                             COST RELEASED_ DID        STUDIO_ID                                                                                      
+---------- ------------------------------ ------------------------------ ---------- --------- ---------- ----------                                                                                     
+M001       PPP                            ACTION                           90000000 13-JAN-10 D002       S003                                                                                           
+
+SQL> edit query1
+
+SQL> edit query2
+
+SQL> @query2
+
+MID        MOVIE_NAME                     CATEGORY                             COST RELEASED_ DID        STUDIO_ID                                                                                      
+---------- ------------------------------ ------------------------------ ---------- --------- ---------- ----------                                                                                     
+M006       NNN                            SUSPENCE                         10000000 05-JUL-08 D001       S001                                                                                           
+
+SQL> exit

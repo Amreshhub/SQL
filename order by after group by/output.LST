@@ -1,0 +1,24 @@
+SQL> CLRAE SCREEN;
+SP2-0734: unknown command beginning "CLRAE SCRE..." - rest of line ignored.
+SQL> clear screen;
+
+SQL> edit quary4;
+
+SQL> @quary4;
+group by max(cost)
+         *
+ERROR at line 3:
+ORA-00934: group function is not allowed here 
+
+
+SQL> edit quary4;
+
+SQL> @quary4;
+
+CATEGROY                                  MAX(COST)  MIN(COST)                  
+---------------------------------------- ---------- ----------                  
+drama                                      40000000   20000000                  
+action                                     80000000   60000000                  
+suspense                                   90000000   30000000                  
+
+SQL> exit

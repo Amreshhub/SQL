@@ -1,0 +1,335 @@
+SQL> clear screen
+
+SQL> edit
+SP2-0107: Nothing to save.
+SQL> edit director2
+
+SQL> @director2
+
+Table created.
+
+SQL> edit insert_director2
+
+SQL> insert_director2
+  2  edit director2
+  3  
+SQL> @insert_director2
+Enter value for director_id: D001
+Enter value for director_name: JHON
+Enter value for director_city: MUMBAI
+old   2: values('&Director_id','&director_name','&director_city')
+new   2: values('D001','JHON','MUMBAI')
+
+1 row created.
+
+SQL> /
+Enter value for director_id: D002
+Enter value for director_name: MARK
+Enter value for director_city: CHENNAI
+old   2: values('&Director_id','&director_name','&director_city')
+new   2: values('D002','MARK','CHENNAI')
+
+1 row created.
+
+SQL> /
+Enter value for director_id: D003
+Enter value for director_name: PETER
+Enter value for director_city: CHENNAI
+old   2: values('&Director_id','&director_name','&director_city')
+new   2: values('D003','PETER','CHENNAI')
+
+1 row created.
+
+SQL> SELECT *FROM DIRECTOR2
+  2  
+SQL> SELECT *FROM DIRECTOR2;
+
+DID        DNAME                DCITY                                           
+---------- -------------------- ------------------------------                  
+D001       JHON                 MUMBAI                                          
+D002       MARK                 CHENNAI                                         
+D003       PETER                CHENNAI                                         
+
+SQL> EDIT QUERY1
+
+SQL> clear screen
+
+SQL> @QUERY1
+
+DID        DNAME                DCITY                          DID              
+---------- -------------------- ------------------------------ ----------       
+DNAME                DCITY                                                      
+-------------------- ------------------------------                             
+D002       MARK                 CHENNAI                        D003             
+PETER                CHENNAI                                                    
+                                                                                
+
+SQL> set linesize 200
+SQL> @QUERY1
+
+DID        DNAME                DCITY                          DID        DNAME                DCITY                                                                                                    
+---------- -------------------- ------------------------------ ---------- -------------------- ------------------------------                                                                           
+D002       MARK                 CHENNAI                        D003       PETER                CHENNAI                                                                                                  
+
+SQL> EDIT QUERY1
+
+SQL> edit query2
+
+SQL> edit movie_table2
+
+SQL> @movie_table2
+constraint foreign key(did) references director2 on delete cascade)
+                      *
+ERROR at line 4:
+ORA-00902: invalid datatype 
+
+
+SQL> edit movie_table2
+
+SQL> @movie_table2
+
+Table created.
+
+SQL> clear screen
+
+SQL> edit insert_movie_table2
+
+SQL> @insert_movie_table2
+Enter value for movie_id: M001
+Enter value for movie_name: PPP
+Enter value for category: ACTION
+Enter value for cost: 90000000
+Enter value for relesed_date: 13-DEC-2010
+Enter value for director_id: D001
+old   2: values('&movie_id','&movie_name','&category',&cost,'&relesed_date','&director_id')
+new   2: values('M001','PPP','ACTION',90000000,'13-DEC-2010','D001')
+
+1 row created.
+
+SQL> /
+Enter value for movie_id: M002
+Enter value for movie_name: QQQ
+Enter value for category: ACTION
+Enter value for cost: 60000000
+Enter value for relesed_date: 12-DEC-2010
+Enter value for director_id: D002
+old   2: values('&movie_id','&movie_name','&category',&cost,'&relesed_date','&director_id')
+new   2: values('M002','QQQ','ACTION',60000000,'12-DEC-2010','D002')
+
+1 row created.
+
+SQL> /
+Enter value for movie_id: M003
+Enter value for movie_name: SSS
+Enter value for category: DRAMA
+Enter value for cost: 50000000
+Enter value for relesed_date: 5-AGU-2011
+Enter value for director_id: D003
+old   2: values('&movie_id','&movie_name','&category',&cost,'&relesed_date','&director_id')
+new   2: values('M003','SSS','DRAMA',50000000,'5-AGU-2011','D003')
+values('M003','SSS','DRAMA',50000000,'5-AGU-2011','D003')
+                                     *
+ERROR at line 2:
+ORA-01843: not a valid month 
+
+
+SQL> /
+Enter value for movie_id: M003
+Enter value for movie_name: SSS
+Enter value for category: DRAMA
+Enter value for cost: 50000000
+Enter value for relesed_date: 05-AUG-2011
+Enter value for director_id: D003
+old   2: values('&movie_id','&movie_name','&category',&cost,'&relesed_date','&director_id')
+new   2: values('M003','SSS','DRAMA',50000000,'05-AUG-2011','D003')
+
+1 row created.
+
+SQL> /
+Enter value for movie_id: M004
+Enter value for movie_name: RRR
+Enter value for category: SUSPENCS
+Enter value for cost: 40000000
+Enter value for relesed_date: 25-JULAY-2009
+Enter value for director_id: D001
+old   2: values('&movie_id','&movie_name','&category',&cost,'&relesed_date','&director_id')
+new   2: values('M004','RRR','SUSPENCS',40000000,'25-JULAY-2009','D001')
+values('M004','RRR','SUSPENCS',40000000,'25-JULAY-2009','D001')
+                                        *
+ERROR at line 2:
+ORA-01841: (full) year must be between -4713 and +9999, and not be 0 
+
+
+SQL> /
+Enter value for movie_id: M004
+Enter value for movie_name: RRR
+Enter value for category: SUSPENCS
+Enter value for cost: 40000000
+Enter value for relesed_date: 25-JULY-2009
+Enter value for director_id: D001
+old   2: values('&movie_id','&movie_name','&category',&cost,'&relesed_date','&director_id')
+new   2: values('M004','RRR','SUSPENCS',40000000,'25-JULY-2009','D001')
+
+1 row created.
+
+SQL> /
+Enter value for movie_id: M005
+Enter value for movie_name: TTT
+Enter value for category: DRAMA
+Enter value for cost: 20000000
+Enter value for relesed_date: 18-FEB-2012
+Enter value for director_id: D004
+old   2: values('&movie_id','&movie_name','&category',&cost,'&relesed_date','&director_id')
+new   2: values('M005','TTT','DRAMA',20000000,'18-FEB-2012','D004')
+insert into movie_table2
+*
+ERROR at line 1:
+ORA-02291: integrity constraint (AMRESH.FFFK_DIDD) violated - parent key not found 
+
+
+SQL> /
+Enter value for movie_id: M005
+Enter value for movie_name: TTT
+Enter value for category: DRAMA
+Enter value for cost: 20000000
+Enter value for relesed_date: 18-FEB-2012
+Enter value for director_id: D004
+old   2: values('&movie_id','&movie_name','&category',&cost,'&relesed_date','&director_id')
+new   2: values('M005','TTT','DRAMA',20000000,'18-FEB-2012','D004')
+insert into movie_table2
+*
+ERROR at line 1:
+ORA-02291: integrity constraint (AMRESH.FFFK_DIDD) violated - parent key not found 
+
+
+SQL> EDIT DIRECTOR2
+
+SQL> EDIT INSERT_DIRECTOR2
+
+SQL> @INSERT_DIRECTOR2
+Enter value for director_id: D004
+Enter value for director_name: STEPHEN
+Enter value for director_city: KOLKOTA
+old   2: values('&Director_id','&director_name','&director_city')
+new   2: values('D004','STEPHEN','KOLKOTA')
+
+1 row created.
+
+SQL> @INSERT_MOVIE_TABLE2
+Enter value for movie_id: M005
+Enter value for movie_name: TTT
+Enter value for category: DRAMA
+Enter value for cost: 20000000
+Enter value for relesed_date: 18-FEB-2012
+Enter value for director_id: D004
+old   2: values('&movie_id','&movie_name','&category',&cost,'&relesed_date','&director_id')
+new   2: values('M005','TTT','DRAMA',20000000,'18-FEB-2012','D004')
+
+1 row created.
+
+SQL> SELECT *FROM MOVIE_TABLE2
+  2  
+SQL> SELECT *FROM MOVIE_TABLE2;
+
+MID        MOVIE_NAME           CATEGORY                   COST R_DATE    DID                                                                                                                           
+---------- -------------------- -------------------- ---------- --------- ----------                                                                                                                    
+M001       PPP                  ACTION                 90000000 13-DEC-10 D001                                                                                                                          
+M002       QQQ                  ACTION                 60000000 12-DEC-10 D002                                                                                                                          
+M003       SSS                  DRAMA                  50000000 05-AUG-11 D003                                                                                                                          
+M004       RRR                  SUSPENCS               40000000 25-JUL-09 D001                                                                                                                          
+M005       TTT                  DRAMA                  20000000 18-FEB-12 D004                                                                                                                          
+
+SQL> EDIT QUERY2
+
+SQL> edit query2;
+
+SQL> edit query2;
+
+SQL> clear screen
+
+SQL> @query2;
+select  movie_id,movie_name,category
+                            *
+ERROR at line 1:
+ORA-00918: column ambiguously defined 
+
+
+SQL> edit query2;
+
+SQL> SELECT *FROM MOVIE_TABLE2;
+
+MID        MOVIE_NAME           CATEGORY                   COST R_DATE    DID                                                                                                                           
+---------- -------------------- -------------------- ---------- --------- ----------                                                                                                                    
+M001       PPP                  ACTION                 90000000 13-DEC-10 D001                                                                                                                          
+M002       QQQ                  ACTION                 60000000 12-DEC-10 D002                                                                                                                          
+M003       SSS                  DRAMA                  50000000 05-AUG-11 D003                                                                                                                          
+M004       RRR                  SUSPENCS               40000000 25-JUL-09 D001                                                                                                                          
+M005       TTT                  DRAMA                  20000000 18-FEB-12 D004                                                                                                                          
+
+SQL> EDIT QUERY2
+
+SQL> @query2;
+select  movie_id,movie_name,category
+                            *
+ERROR at line 1:
+ORA-00918: column ambiguously defined 
+
+
+SQL> EDIT QUERY2
+
+SQL> EDIT QUERY21
+
+SQL> @QUERY21
+select  movie_id,movie_name,category
+                            *
+ERROR at line 1:
+ORA-00918: column ambiguously defined 
+
+
+SQL> EDIT QUERY21
+
+SQL> @QUERY21
+select m1.movie_id,m1.movie_name,m1.category,m2.movie_id,m2.movie_name,m2.category
+                                             *
+ERROR at line 1:
+ORA-00904: "M2"."MOVIE_ID": invalid identifier 
+
+
+SQL> EDIT QUERY21
+
+SQL> @QUERY21
+
+MID        MOVIE_NAME           CATEGORY             MID        MOVIE_NAME           CATEGORY                                                                                                           
+---------- -------------------- -------------------- ---------- -------------------- --------------------                                                                                               
+M001       PPP                  ACTION               M002       QQQ                  ACTION                                                                                                             
+M003       SSS                  DRAMA                M005       TTT                  DRAMA                                                                                                              
+
+SQL> EDIT QUERY21
+
+SQL> EDIT QUERY2
+
+SQL> EDIT QUERY22
+
+SQL> @QUERY22
+
+MID        MOVIE_NAME           CATEGORY                   COST R_DATE    DID        MID        MOVIE_NAME           CATEGORY                   COST R_DATE    DID                                      
+---------- -------------------- -------------------- ---------- --------- ---------- ---------- -------------------- -------------------- ---------- --------- ----------                               
+M001       PPP                  ACTION                 90000000 13-DEC-10 D001       M004       RRR                  SUSPENCS               40000000 25-JUL-09 D001                                     
+
+SQL> set linesize 300
+SQL> @QUERY22
+
+MID        MOVIE_NAME           CATEGORY                   COST R_DATE    DID        MID        MOVIE_NAME           CATEGORY                   COST R_DATE    DID                                                                                                                                          
+---------- -------------------- -------------------- ---------- --------- ---------- ---------- -------------------- -------------------- ---------- --------- ----------                                                                                                                                   
+M001       PPP                  ACTION                 90000000 13-DEC-10 D001       M004       RRR                  SUSPENCS               40000000 25-JUL-09 D001                                                                                                                                         
+
+SQL> set linesize 400
+SQL> @QUERY22
+
+MID        MOVIE_NAME           CATEGORY                   COST R_DATE    DID        MID        MOVIE_NAME           CATEGORY                   COST R_DATE    DID                                                                                                                                                                                                                                              
+---------- -------------------- -------------------- ---------- --------- ---------- ---------- -------------------- -------------------- ---------- --------- ----------                                                                                                                                                                                                                                       
+M001       PPP                  ACTION                 90000000 13-DEC-10 D001       M004       RRR                  SUSPENCS               40000000 25-JUL-09 D001                                                                                                                                                                                                                                             
+
+SQL> EDIT QUERY22
+
+SQL> exit

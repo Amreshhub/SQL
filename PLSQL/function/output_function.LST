@@ -1,0 +1,41 @@
+SQL> edit function_square_call_in_pl_sql_programe
+
+SQL> @function_square_call_in_pl_sql_programe;
+SP2-0158: unknown SET option "vrify"
+
+Enter value for square_number: 4
+old   4: result:= square('&square_number');
+new   4: result:= square('4');
+dbms_output.put_line('Square of given number':||result);
+                                             *
+ERROR at line 5:
+ORA-06550: line 5, column 46: 
+PLS-00103: Encountered the symbol ":" when expecting one of the following: 
+) , * & | = - + < / > at in is mod remainder not rem => .. 
+<an exponent (**)> <> or != or ~= >= <= <> and or like LIKE2_ 
+LIKE4_ LIKEC_ as between from using || multiset member 
+SUBMULTISET_ 
+
+
+SQL> edit function_square_call_in_pl_sql_programe
+
+SQL> @function_square_call_in_pl_sql_programe;
+SP2-0158: unknown SET option "vrify"
+
+Enter value for square_number: 5
+old   4: result:= square('&square_number');
+new   4: result:= square('5');
+Square of given number:-25                                                      
+SQL> edit employee
+
+SQL> @employee;
+SQL> set feedback on;
+SQL> @employee;
+create table employee
+             *
+ERROR at line 1:
+ORA-00955: name is already used by an existing object 
+
+
+SQL> spool output5_9_13
+

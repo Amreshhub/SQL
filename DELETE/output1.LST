@@ -1,0 +1,473 @@
+SQL> clear screen
+
+SQL> edit query5
+
+SQL> clear screen
+
+SQL> select *from employee_table;
+
+ECODE        ENAME                POST                 CITY                     
+------------ -------------------- -------------------- --------------------     
+    SALARY                                                                      
+----------                                                                      
+E004         PETER                EXECUTIVE            KOLKATA                  
+     12000                                                                      
+                                                                                
+E005         STEPHEN              EXECUTIVE            MUMBAI                   
+      9800                                                                      
+                                                                                
+E006         CLARK                PEON                 CHENNAI                  
+      3800                                                                      
+                                                                                
+
+ECODE        ENAME                POST                 CITY                     
+------------ -------------------- -------------------- --------------------     
+    SALARY                                                                      
+----------                                                                      
+E001         JHON                 MANAGER              DELHI                    
+     55000                                                                      
+                                                                                
+E003         DAVID                CLERK                DELHI                    
+      4800                                                                      
+                                                                                
+E002         MARK                 CLERK                KOLKATA                  
+      6200                                                                      
+                                                                                
+
+6 rows selected.
+
+SQL> set lin200
+SQL> select *from employee_table;
+
+ECODE        ENAME                POST                 CITY                     SALARY                                                                                                                  
+------------ -------------------- -------------------- -------------------- ----------                                                                                                                  
+E004         PETER                EXECUTIVE            KOLKATA                   12000                                                                                                                  
+E005         STEPHEN              EXECUTIVE            MUMBAI                     9800                                                                                                                  
+E006         CLARK                PEON                 CHENNAI                    3800                                                                                                                  
+E001         JHON                 MANAGER              DELHI                     55000                                                                                                                  
+E003         DAVID                CLERK                DELHI                      4800                                                                                                                  
+E002         MARK                 CLERK                KOLKATA                    6200                                                                                                                  
+
+6 rows selected.
+
+SQL> @query5
+
+3 rows deleted.
+
+SQL> select *from employee_table;
+
+ECODE        ENAME                POST                 CITY                     SALARY                                                                                                                  
+------------ -------------------- -------------------- -------------------- ----------                                                                                                                  
+E004         PETER                EXECUTIVE            KOLKATA                   12000                                                                                                                  
+E005         STEPHEN              EXECUTIVE            MUMBAI                     9800                                                                                                                  
+E002         MARK                 CLERK                KOLKATA                    6200                                                                                                                  
+
+SQL> edit query5
+
+SQL> @insert_employee_table;
+Enter value for employee_code: E001
+Enter value for employee_name: JHON
+Enter value for employee_post: MANAGER
+Enter value for employee_city: DELHI
+Enter value for salary: 55000
+old   2: values('&Employee_code','&Employee_name','&Employee_post','&Employee_city',&salary)
+new   2: values('E001','JHON','MANAGER','DELHI',55000)
+
+1 row created.
+
+SQL> /
+Enter value for employee_code: E003
+Enter value for employee_name: DAVID
+Enter value for employee_post: CLERK
+Enter value for employee_city: DELHI
+Enter value for salary: 4800
+old   2: values('&Employee_code','&Employee_name','&Employee_post','&Employee_city',&salary)
+new   2: values('E003','DAVID','CLERK','DELHI',4800)
+
+1 row created.
+
+SQL> /
+Enter value for employee_code: E006
+Enter value for employee_name: CLARK
+Enter value for employee_post: PEON
+Enter value for employee_city: CHENNAI
+Enter value for salary: 3800
+old   2: values('&Employee_code','&Employee_name','&Employee_post','&Employee_city',&salary)
+new   2: values('E006','CLARK','PEON','CHENNAI',3800)
+
+1 row created.
+
+SQL> edit query5_second_method
+
+SQL>  @query5_second_method
+
+3 rows deleted.
+
+SQL> select *from employee_table;
+
+ECODE        ENAME                POST                 CITY                     SALARY                                                                                                                  
+------------ -------------------- -------------------- -------------------- ----------                                                                                                                  
+E004         PETER                EXECUTIVE            KOLKATA                   12000                                                                                                                  
+E005         STEPHEN              EXECUTIVE            MUMBAI                     9800                                                                                                                  
+E002         MARK                 CLERK                KOLKATA                    6200                                                                                                                  
+
+SQL> edit query5_second_method
+
+SQL> @insert_employee_table;
+Enter value for employee_code: E001
+Enter value for employee_name: JHON
+Enter value for employee_post: MANAGER
+Enter value for employee_city: DELHI
+Enter value for salary: 55000
+old   2: values('&Employee_code','&Employee_name','&Employee_post','&Employee_city',&salary)
+new   2: values('E001','JHON','MANAGER','DELHI',55000)
+
+1 row created.
+
+SQL> /
+Enter value for employee_code: E003
+Enter value for employee_name: DAVID
+Enter value for employee_post: CLERK
+Enter value for employee_city: DELHI
+Enter value for salary: 4800
+old   2: values('&Employee_code','&Employee_name','&Employee_post','&Employee_city',&salary)
+new   2: values('E003','DAVID','CLERK','DELHI',4800)
+
+1 row created.
+
+SQL> /
+Enter value for employee_code: E006
+Enter value for employee_name: CLARK
+Enter value for employee_post: PEON
+Enter value for employee_city: CHENNAI
+Enter value for salary: 3800
+old   2: values('&Employee_code','&Employee_name','&Employee_post','&Employee_city',&salary)
+new   2: values('E006','CLARK','PEON','CHENNAI',3800)
+
+1 row created.
+
+SQL> edit query6
+
+SQL> @query6
+
+0 rows deleted.
+
+SQL> edit query6
+
+SQL> @query6
+
+2 rows deleted.
+
+SQL> select *from employee_table;
+
+ECODE        ENAME                POST                 CITY                     SALARY                                                                                                                  
+------------ -------------------- -------------------- -------------------- ----------                                                                                                                  
+E004         PETER                EXECUTIVE            KOLKATA                   12000                                                                                                                  
+E005         STEPHEN              EXECUTIVE            MUMBAI                     9800                                                                                                                  
+E002         MARK                 CLERK                KOLKATA                    6200                                                                                                                  
+E001         JHON                 MANAGER              DELHI                     55000                                                                                                                  
+
+SQL> edit query6
+
+SQL> edit query6_second_method
+
+SQL> @insert_employee_table;
+Enter value for employee_code: E003
+Enter value for employee_name: DAVID
+Enter value for employee_post: CLERK
+Enter value for employee_city: DELHI
+Enter value for salary: 4800
+old   2: values('&Employee_code','&Employee_name','&Employee_post','&Employee_city',&salary)
+new   2: values('E003','DAVID','CLERK','DELHI',4800)
+
+1 row created.
+
+SQL> /
+Enter value for employee_code: E006
+Enter value for employee_name: CLARK
+Enter value for employee_post: PEON
+Enter value for employee_city: CHENNAI
+Enter value for salary: 3800
+old   2: values('&Employee_code','&Employee_name','&Employee_post','&Employee_city',&salary)
+new   2: values('E006','CLARK','PEON','CHENNAI',3800)
+
+1 row created.
+
+SQL> @query6_second_method
+
+0 rows deleted.
+
+SQL> edit query6_second_method
+
+SQL> select *ferom employee_table;
+select *ferom employee_table
+        *
+ERROR at line 1:
+ORA-00923: FROM keyword not found where expected 
+
+
+SQL> select *from employee_table;
+
+ECODE        ENAME                POST                 CITY                     SALARY                                                                                                                  
+------------ -------------------- -------------------- -------------------- ----------                                                                                                                  
+E004         PETER                EXECUTIVE            KOLKATA                   12000                                                                                                                  
+E005         STEPHEN              EXECUTIVE            MUMBAI                     9800                                                                                                                  
+E002         MARK                 CLERK                KOLKATA                    6200                                                                                                                  
+E001         JHON                 MANAGER              DELHI                     55000                                                                                                                  
+E003         DAVID                CLERK                DELHI                      4800                                                                                                                  
+E006         CLARK                PEON                 CHENNAI                    3800                                                                                                                  
+
+6 rows selected.
+
+SQL> edit query7
+
+SQL> @query7
+
+4 rows deleted.
+
+SQL> select *from employee_table;
+
+ECODE        ENAME                POST                 CITY                     SALARY                                                                                                                  
+------------ -------------------- -------------------- -------------------- ----------                                                                                                                  
+E001         JHON                 MANAGER              DELHI                     55000                                                                                                                  
+E006         CLARK                PEON                 CHENNAI                    3800                                                                                                                  
+
+SQL> insert_employee_table;
+insert_employee_table
+*
+ERROR at line 1:
+ORA-00900: invalid SQL statement 
+
+
+SQL> insert_employee_table;
+insert_employee_table
+*
+ERROR at line 1:
+ORA-00900: invalid SQL statement 
+
+
+SQL> @insert_employee_table;
+Enter value for employee_code: E002
+Enter value for employee_name: CLERK
+Enter value for employee_post: KOLKATA
+Enter value for employee_city: 6200
+Enter value for salary: /
+old   2: values('&Employee_code','&Employee_name','&Employee_post','&Employee_city',&salary)
+new   2: values('E002','CLERK','KOLKATA','6200',/)
+values('E002','CLERK','KOLKATA','6200',/)
+                                       *
+ERROR at line 2:
+ORA-00936: missing expression 
+
+
+SQL> @insert_employee_table;
+Enter value for employee_code: E002
+Enter value for employee_name: MARK
+Enter value for employee_post: CLERK
+Enter value for employee_city: KOLKATA
+Enter value for salary: 6200
+old   2: values('&Employee_code','&Employee_name','&Employee_post','&Employee_city',&salary)
+new   2: values('E002','MARK','CLERK','KOLKATA',6200)
+
+1 row created.
+
+SQL> /
+Enter value for employee_code: E003
+Enter value for employee_name: DAVID
+Enter value for employee_post: CLERK
+Enter value for employee_city: DELHI
+Enter value for salary: 4800
+old   2: values('&Employee_code','&Employee_name','&Employee_post','&Employee_city',&salary)
+new   2: values('E003','DAVID','CLERK','DELHI',4800)
+
+1 row created.
+
+SQL> /
+Enter value for employee_code: E004
+Enter value for employee_name: PETER
+Enter value for employee_post: EXECUTIVE
+Enter value for employee_city: KOLKATA
+Enter value for salary: 12000
+old   2: values('&Employee_code','&Employee_name','&Employee_post','&Employee_city',&salary)
+new   2: values('E004','PETER','EXECUTIVE','KOLKATA',12000)
+
+1 row created.
+
+SQL> /
+Enter value for employee_code: E005
+Enter value for employee_name: STEPHEN
+Enter value for employee_post: EXECUTIVE
+Enter value for employee_city: MUMBAI
+Enter value for salary: 9800
+old   2: values('&Employee_code','&Employee_name','&Employee_post','&Employee_city',&salary)
+new   2: values('E005','STEPHEN','EXECUTIVE','MUMBAI',9800)
+
+1 row created.
+
+SQL> edit query7
+
+SQL> @query7
+
+3 rows deleted.
+
+SQL> select* from employee_table;
+
+ECODE        ENAME                POST                 CITY                     SALARY                                                                                                                  
+------------ -------------------- -------------------- -------------------- ----------                                                                                                                  
+E001         JHON                 MANAGER              DELHI                     55000                                                                                                                  
+E006         CLARK                PEON                 CHENNAI                    3800                                                                                                                  
+E005         STEPHEN              EXECUTIVE            MUMBAI                     9800                                                                                                                  
+
+SQL> edit query7
+
+SQL> edit query7_second_method
+
+SQL> 
+SQL> @query7_second_method
+
+0 rows deleted.
+
+SQL> @insert_employee_table
+Enter value for employee_code: E002
+Enter value for employee_name: MARK
+Enter value for employee_post: CLERK
+Enter value for employee_city: KOLKATA
+Enter value for salary: 6200
+old   2: values('&Employee_code','&Employee_name','&Employee_post','&Employee_city',&salary)
+new   2: values('E002','MARK','CLERK','KOLKATA',6200)
+
+1 row created.
+
+SQL> /
+Enter value for employee_code: E003
+Enter value for employee_name: DAVID
+Enter value for employee_post: CLERK
+Enter value for employee_city: DELHI
+Enter value for salary: 4800
+old   2: values('&Employee_code','&Employee_name','&Employee_post','&Employee_city',&salary)
+new   2: values('E003','DAVID','CLERK','DELHI',4800)
+
+1 row created.
+
+SQL> /
+Enter value for employee_code: E004
+Enter value for employee_name: PETER
+Enter value for employee_post: EXECUTIVE
+Enter value for employee_city: KOLKATA
+Enter value for salary: 12000
+old   2: values('&Employee_code','&Employee_name','&Employee_post','&Employee_city',&salary)
+new   2: values('E004','PETER','EXECUTIVE','KOLKATA',12000)
+
+1 row created.
+
+SQL> edit query8
+
+SQL> @query8
+
+4 rows deleted.
+
+SQL> edit query8
+
+SQL> select* from employee_table;
+
+ECODE        ENAME                POST                 CITY                     SALARY                                                                                                                  
+------------ -------------------- -------------------- -------------------- ----------                                                                                                                  
+E001         JHON                 MANAGER              DELHI                     55000                                                                                                                  
+E004         PETER                EXECUTIVE            KOLKATA                   12000                                                                                                                  
+
+SQL> @insert_employee_table
+Enter value for employee_code: E002
+Enter value for employee_name: MARK
+Enter value for employee_post: CLERK
+Enter value for employee_city: KOLKATA
+Enter value for salary: 6200
+old   2: values('&Employee_code','&Employee_name','&Employee_post','&Employee_city',&salary)
+new   2: values('E002','MARK','CLERK','KOLKATA',6200)
+
+1 row created.
+
+SQL> /
+Enter value for employee_code: E003
+Enter value for employee_name: DAVID
+Enter value for employee_post: CLERK
+Enter value for employee_city: DELHI
+Enter value for salary: 4800
+old   2: values('&Employee_code','&Employee_name','&Employee_post','&Employee_city',&salary)
+new   2: values('E003','DAVID','CLERK','DELHI',4800)
+
+1 row created.
+
+SQL> /
+Enter value for employee_code: E005
+Enter value for employee_name: STEPHEN
+Enter value for employee_post: EXECUTIVE
+Enter value for employee_city: MUMBAI
+Enter value for salary: 9800
+old   2: values('&Employee_code','&Employee_name','&Employee_post','&Employee_city',&salary)
+new   2: values('E005','STEPHEN','EXECUTIVE','MUMBAI',9800)
+
+1 row created.
+
+SQL> /
+Enter value for employee_code: E006
+Enter value for employee_name: CLERK
+Enter value for employee_post: PEON
+Enter value for employee_city: CHENNAI
+Enter value for salary: 3800
+old   2: values('&Employee_code','&Employee_name','&Employee_post','&Employee_city',&salary)
+new   2: values('E006','CLERK','PEON','CHENNAI',3800)
+
+1 row created.
+
+SQL> edit query9
+
+SQL> @query9
+
+1 row deleted.
+
+SQL> select *from employee_table;
+
+ECODE        ENAME                POST                 CITY                     SALARY                                                                                                                  
+------------ -------------------- -------------------- -------------------- ----------                                                                                                                  
+E001         JHON                 MANAGER              DELHI                     55000                                                                                                                  
+E002         MARK                 CLERK                KOLKATA                    6200                                                                                                                  
+E003         DAVID                CLERK                DELHI                      4800                                                                                                                  
+E005         STEPHEN              EXECUTIVE            MUMBAI                     9800                                                                                                                  
+E006         CLERK                PEON                 CHENNAI                    3800                                                                                                                  
+
+SQL> edit query9
+
+SQL> edit query9_second_method
+
+SQL> @insert_employee_table
+Enter value for employee_code: E004
+Enter value for employee_name: PETER
+Enter value for employee_post: EXECUTIVE
+Enter value for employee_city: KOLKATA
+Enter value for salary: 12000
+old   2: values('&Employee_code','&Employee_name','&Employee_post','&Employee_city',&salary)
+new   2: values('E004','PETER','EXECUTIVE','KOLKATA',12000)
+
+1 row created.
+
+SQL> @query9_second_method
+
+1 row deleted.
+
+SQL> edit query9_second_method
+
+SQL> edit query10
+
+SQL> @query10
+
+0 rows deleted.
+
+SQL> edit query10
+
+SQL> @query10
+
+0 rows deleted.
+
+SQL> edit query10
+
+SQL> exit

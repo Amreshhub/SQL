@@ -1,0 +1,460 @@
+SQL> edit query2_third_method
+
+SQL> @query2_third_method
+
+ECODE      ENAME                          POST                     SALARY       
+---------- ------------------------------ -------------------- ----------       
+E005       DAVID                          CLARK                      4800       
+
+SQL> edit query1_first_methiod
+
+SQL> edit query1_first_methiod
+
+SQL> @query3_first_methiod
+			where pamt.ecode=employee.ecode and month='JAN')
+			      *
+ERROR at line 3:
+ORA-00904: "PAMT"."ECODE": invalid identifier 
+
+
+SQL> edit query3_first_methiod
+
+SQL> @query3_first_methiod
+
+ECODE      ENAME                          POST                     SALARY       
+---------- ------------------------------ -------------------- ----------       
+E004       STEPHEN                        CLARK                      6200       
+
+SQL> edit query3_first_methiod
+
+SQL> @query3_first_methiod
+
+no rows selected
+
+SQL> edit query3_first_methiod
+
+SQL> @query3_first_methiod
+
+ECODE      ENAME                          POST                     SALARY       
+---------- ------------------------------ -------------------- ----------       
+E002       PETER                          EXECUTIVE                 12000       
+E003       MARK                           EXECUTIVE                  9800       
+
+SQL> edit query3_first_methiod
+
+SQL> @query3_first_methiod
+
+ECODE      ENAME                          POST                     SALARY       
+---------- ------------------------------ -------------------- ----------       
+E004       STEPHEN                        CLARK                      6200       
+
+SQL> edit query3_first_methiod
+
+SQL> @query3_first_methiod
+	where payment.ecode=employee.ecode and payment.pamt>employee.salaryandmonth='JAN')
+	                                                                           *
+ERROR at line 3:
+ORA-00907: missing right parenthesis 
+
+
+SQL> edit query3_first_methiod
+
+SQL> @query3_first_methiod
+
+ECODE      ENAME                          POST                     SALARY       
+---------- ------------------------------ -------------------- ----------       
+E002       PETER                          EXECUTIVE                 12000       
+E003       MARK                           EXECUTIVE                  9800       
+
+SQL> edit query3_first_methiod
+
+SQL> @query3_first_methiod
+
+ECODE      ENAME                          POST                     SALARY       
+---------- ------------------------------ -------------------- ----------       
+E004       STEPHEN                        CLARK                      6200       
+
+SQL> edit query3_first_methiod
+
+SQL> @query3_first_methiod
+
+ECODE      ENAME                          POST                     SALARY       
+---------- ------------------------------ -------------------- ----------       
+E004       STEPHEN                        CLARK                      6200       
+
+SQL> edit query3_first_methiod
+
+SQL> edit query3_second_methiod
+
+SQL> @query3_second_methiod
+
+ECODE      ENAME                          POST                     SALARY       
+---------- ------------------------------ -------------------- ----------       
+E004       STEPHEN                        CLARK                      6200       
+
+SQL> edit query3_thired_methiod
+
+SQL> @query3_thired_methiod
+
+ECODE      ENAME                          POST                     SALARY       
+---------- ------------------------------ -------------------- ----------       
+E002       PETER                          EXECUTIVE                 12000       
+E003       MARK                           EXECUTIVE                  9800       
+
+SQL> edit query3_thired_methiod
+
+SQL> @query3_second_methiod
+
+ECODE      ENAME                          POST                     SALARY       
+---------- ------------------------------ -------------------- ----------       
+E004       STEPHEN                        CLARK                      6200       
+
+SQL> edit query3_second_methiod
+
+SQL> edit query3_thired_methiod
+
+SQL> @query3_thired_methiod
+
+ECODE      ENAME                          POST                     SALARY       
+---------- ------------------------------ -------------------- ----------       
+E004       STEPHEN                        CLARK                      6200       
+
+SQL> edit query3_thired_methiod
+
+SQL> edit query4_first_methiod
+
+SQL> @query4_first_methiod
+
+ECODE      ENAME                                                                
+---------- ------------------------------                                       
+E002       PETER                                                                
+E003       MARK                                                                 
+
+SQL> edit query4_first_methiod
+
+SQL> edit query4_second_methiod
+
+SQL> @query4_second_methiod
+
+ECODE      ENAME                                                                
+---------- ------------------------------                                       
+E002       PETER                                                                
+E003       MARK                                                                 
+
+SQL> edit query4_second_methiod
+
+SQL> edit query4_third_methiod
+
+SQL> @query4_third_methiod
+
+ECODE      ENAME                                                                
+---------- ------------------------------                                       
+E002       PETER                                                                
+E003       MARK                                                                 
+
+SQL> edit query4_third_methiod
+
+SQL> @query4_first_methiod
+
+ECODE      ENAME                                                                
+---------- ------------------------------                                       
+E002       PETER                                                                
+E003       MARK                                                                 
+
+SQL> edit query4_first_methiod
+
+SQL> @query4_first_methiod
+
+ECODE      ENAME                                                                
+---------- ------------------------------                                       
+E002       PETER                                                                
+E003       MARK                                                                 
+
+SQL> edit query4_first_methiod
+
+SQL> edit query4_fourth_methiod
+
+SQL> @query4_fourth_methiod
+
+ECODE      ENAME                                                                
+---------- ------------------------------                                       
+E002       PETER                                                                
+E003       MARK                                                                 
+
+SQL> edit query4_fourth_methiod
+
+SQL> edit query4_fifth_methiod
+
+SQL> @query4_fifth_methiod
+
+ECODE      ENAME                                                                
+---------- ------------------------------                                       
+E005       DAVID                                                                
+E004       STEPHEN                                                              
+E003       MARK                                                                 
+E002       PETER                                                                
+
+SQL> edit query4_fifth_methiod
+
+SQL> @query4_fifth_methiod
+
+ECODE      ENAME                                                                
+---------- ------------------------------                                       
+E001       JHON                                                                 
+E002       PETER                                                                
+E003       MARK                                                                 
+E004       STEPHEN                                                              
+
+SQL> edit query4_fifth_methiod
+
+SQL> @query4_fifth_methiod
+
+ECODE      ENAME                                                                
+---------- ------------------------------                                       
+E005       DAVID                                                                
+E004       STEPHEN                                                              
+E003       MARK                                                                 
+E002       PETER                                                                
+
+SQL> edit query4_fifth_methiod
+
+SQL> @query4_fourth_methiod
+
+ECODE      ENAME                                                                
+---------- ------------------------------                                       
+E002       PETER                                                                
+E003       MARK                                                                 
+
+SQL> edit query4_fifth_methiod
+
+SQL> edit query5_first_methiod
+
+SQL> @query5_first_methiod
+
+ECODE      ENAME                          POST                     SALARY       
+---------- ------------------------------ -------------------- ----------       
+E001       JHON                           MANAJER                   65000       
+
+SQL> edit query5_first_methiod
+
+SQL> edit query5_second_methiod
+
+SQL> @query5_second_methiod
+
+ECODE      ENAME                          POST                     SALARY       
+---------- ------------------------------ -------------------- ----------       
+E001       JHON                           MANAJER                   65000       
+E002       PETER                          EXECUTIVE                 12000       
+E003       MARK                           EXECUTIVE                  9800       
+E004       STEPHEN                        CLARK                      6200       
+E005       DAVID                          CLARK                      4800       
+
+SQL> edit query5_second_methiod
+
+SQL> @query5_second_methiod
+
+no rows selected
+
+SQL> edit query5_second_methiod
+
+SQL> @query5_second_methiod
+
+ECODE      ENAME                          POST                     SALARY       
+---------- ------------------------------ -------------------- ----------       
+E001       JHON                           MANAJER                   65000       
+
+SQL> edit query5_second_methiod
+
+SQL> edit query5_third_methiod
+
+SQL> @query5_third_methiod
+
+ECODE      ENAME                          POST                     SALARY       
+---------- ------------------------------ -------------------- ----------       
+E001       JHON                           MANAJER                   65000       
+
+SQL> edit query5_third_methiod
+
+SQL> edit query5_fourth_methiod
+
+SQL> @query5_fourth_methiod
+
+ECODE      ENAME                          POST                     SALARY       
+---------- ------------------------------ -------------------- ----------       
+E001       JHON                           MANAJER                   65000       
+
+SQL> edit query5_fourth_methiod
+
+SQL> @query5_fourth_methiod
+
+ECODE      ENAME                          POST                     SALARY       
+---------- ------------------------------ -------------------- ----------       
+E001       JHON                           MANAJER                   65000       
+
+SQL> edit query5_fourth_methiod
+
+SQL> edit query6_first_methiod
+
+SQL> @query6_first_methiod
+			where max(pamt)
+			      *
+ERROR at line 3:
+ORA-00934: group function is not allowed here 
+
+
+SQL> edit query6_first_methiod
+
+SQL> @query6_first_methiod
+			where pamt=(select max(pamt) from paymant)
+			                                         *
+ERROR at line 3:
+ORA-00907: missing right parenthesis 
+
+
+SQL> edit query6_first_methiod
+
+SQL> @query6_first_methiod
+			where pamt=(select max(pamt) from paymant))
+			                                  *
+ERROR at line 3:
+ORA-00942: table or view does not exist 
+
+
+SQL> edit query6_first_methiod
+
+SQL> @query6_first_methiod
+
+ECODE      ENAME                          POST                     SALARY       
+---------- ------------------------------ -------------------- ----------       
+E001       JHON                           MANAJER                   65000       
+
+SQL> edit query6_first_methiod
+
+SQL> @query6_first_methiod
+
+ECODE      ENAME                          POST                     SALARY       
+---------- ------------------------------ -------------------- ----------       
+E001       JHON                           MANAJER                   65000       
+
+SQL> edit query6_first_methiod
+
+SQL> edit query6_second_methiod
+
+SQL> @query6_second_methiod
+
+ECODE      ENAME                          POST                     SALARY       
+---------- ------------------------------ -------------------- ----------       
+E001       JHON                           MANAJER                   65000       
+
+SQL> edit query6_second_methiod
+
+SQL> edit query6_third_methiod
+
+SQL> @query6_third_methiod
+
+ECODE      ENAME                          POST                     SALARY       
+---------- ------------------------------ -------------------- ----------       
+E001       JHON                           MANAJER                   65000       
+
+SQL> edit query6_third_methiod
+
+SQL> edit query6_fourth_methiod
+
+SQL> @query6_fourth_methiod
+
+ECODE      ENAME                          POST                     SALARY       
+---------- ------------------------------ -------------------- ----------       
+E001       JHON                           MANAJER                   65000       
+
+SQL> edit query6_fourth_methiod
+
+SQL> edit query7_first_methiod
+
+SQL> @query7_first_methiod
+								having avg(pamt))
+								                *
+ERROR at line 4:
+ORA-00920: invalid relational operator 
+
+
+SQL> edit query7_first_methiod
+
+SQL> @query7_first_methiod
+			where payment.pamt>employee.salary and group by pamt
+			                                       *
+ERROR at line 3:
+ORA-00936: missing expression 
+
+
+SQL> edit query7_first_methiod
+
+SQL> @query7_first_methiod
+			where payment.pamt>employee.salary (select pamt from payment
+			                                    *
+ERROR at line 3:
+ORA-00936: missing expression 
+
+
+SQL> edit query7_first_methiod
+
+SQL> @query7_first_methiod
+						having avg(pamt))
+						                *
+ERROR at line 5:
+ORA-00920: invalid relational operator 
+
+
+SQL> edit query7_first_methiod
+
+SQL> @query7_first_methiod
+						 having avg(pamt)))
+						                 *
+ERROR at line 6:
+ORA-00920: invalid relational operator 
+
+
+SQL> 
+SQL> edit query7_first_methiod
+
+SQL> @query7_first_methiod
+
+ECODE      ENAME                          POST                     SALARY       
+---------- ------------------------------ -------------------- ----------       
+E002       PETER                          EXECUTIVE                 12000       
+E003       MARK                           EXECUTIVE                  9800       
+E004       STEPHEN                        CLARK                      6200       
+E005       DAVID                          CLARK                      4800       
+
+SQL> edit query7_first_methiod
+
+SQL> edit query7_first_methiod
+
+SQL> @query7_first_methiod
+
+ECODE      ENAME                          POST                     SALARY       
+---------- ------------------------------ -------------------- ----------       
+E001       JHON                           MANAJER                   65000       
+
+SQL> edit query7_first_methiod
+
+SQL> edit query7_second_methiod
+
+SQL> @query7_second_methiod
+
+ECODE      ENAME                          POST                     SALARY       
+---------- ------------------------------ -------------------- ----------       
+E001       JHON                           MANAJER                   65000       
+
+SQL> edit query7_second_methiod
+
+SQL> @query7_second_methiod
+
+ECODE      ENAME                          POST                     SALARY       
+---------- ------------------------------ -------------------- ----------       
+E001       JHON                           MANAJER                   65000       
+
+SQL> edit query7_second_methiod
+
+SQL> edit query7_third_methiod
+
+SQL> exit

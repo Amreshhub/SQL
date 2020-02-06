@@ -1,0 +1,360 @@
+SQL> clear screen
+
+SQL> edit employee_table1
+
+SQL> @employee_table1
+post varchar2(20) not null,doj varchar2(30) not null,salary number(12,2) not null
+                                                                                *
+ERROR at line 3:
+ORA-00907: missing right parenthesis 
+
+
+SQL> edit employee_table1
+
+SQL> @employee_table1
+  4  
+SQL> @employee_table1
+  4  @employee_table1
+  7  
+SQL> edit employee_table1
+
+SQL> clear screen
+
+SQL> @employee_table1
+  4  
+SQL> edit employee_table1
+
+SQL> @employee_table1
+
+Table created.
+
+SQL> @insert_employee_table1
+SP2-0310: unable to open file "insert_employee_table1.sql"
+SQL> edit insert_employee_table1
+
+SQL> @insert_employee_table1
+Enter value for employee_name: 
+Enter value for employee_code: 
+Enter value for employee_post: 
+Enter value for date_of_joianig: 
+Enter value for salary: 
+old   2: values('&Employee_name','&Employee_code','&Employee_post','&Date_of_joianig',&Salary)
+new   2: values('','','','',)
+values('','','','',)
+                   *
+ERROR at line 2:
+ORA-00936: missing expression 
+
+
+SQL> 
+SQL> edit insert_employee_table1
+
+SQL> @insert_employee_table1
+Enter value for employee_code: E001
+Enter value for employee_name: JHON
+Enter value for employee_post: JUNIOR PROGARMER
+Enter value for date_of_joianig: 10-OCT-2012
+Enter value for salary: 20000
+old   2: values('&Employee_code','&Employee_name','&Employee_post','&Date_of_joianig',&Salary)
+new   2: values('E001','JHON','JUNIOR PROGARMER','10-OCT-2012',20000)
+
+1 row created.
+
+SQL> /
+Enter value for employee_code: E002
+Enter value for employee_name: MARK
+Enter value for employee_post: SENIOR PROGRAMER
+Enter value for date_of_joianig: 20-FEB-2010
+Enter value for salary: 55000
+old   2: values('&Employee_code','&Employee_name','&Employee_post','&Date_of_joianig',&Salary)
+new   2: values('E002','MARK','SENIOR PROGRAMER','20-FEB-2010',55000)
+
+1 row created.
+
+SQL> /
+Enter value for employee_code: E003
+Enter value for employee_name: STEPHEN
+Enter value for employee_post: JUNIOR PROGRAMER
+Enter value for date_of_joianig: 12-FEB-2012
+Enter value for salary: 15000
+old   2: values('&Employee_code','&Employee_name','&Employee_post','&Date_of_joianig',&Salary)
+new   2: values('E003','STEPHEN','JUNIOR PROGRAMER','12-FEB-2012',15000)
+
+1 row created.
+
+SQL> /
+Enter value for employee_code: E004
+Enter value for employee_name: CLARK
+Enter value for employee_post: CLARK
+Enter value for date_of_joianig: 18-MARCH-2009
+Enter value for salary: 6000
+old   2: values('&Employee_code','&Employee_name','&Employee_post','&Date_of_joianig',&Salary)
+new   2: values('E004','CLARK','CLARK','18-MARCH-2009',6000)
+
+1 row created.
+
+SQL> /
+Enter value for employee_code: E005
+Enter value for employee_name: PETER
+Enter value for employee_post: SYSTEM ANYLIST
+Enter value for date_of_joianig: 11-JAN-2011
+Enter value for salary: 65000
+old   2: values('&Employee_code','&Employee_name','&Employee_post','&Date_of_joianig',&Salary)
+new   2: values('E005','PETER','SYSTEM ANYLIST','11-JAN-2011',65000)
+
+1 row created.
+
+SQL> SELECT* FROM EMPLOYEE_TABLE1;
+
+ECODE                ENAME                POST                                  
+-------------------- -------------------- --------------------                  
+DOJ                                SALARY                                       
+------------------------------ ----------                                       
+E001                 JHON                 JUNIOR PROGARMER                      
+10-OCT-2012                         20000                                       
+                                                                                
+E002                 MARK                 SENIOR PROGRAMER                      
+20-FEB-2010                         55000                                       
+                                                                                
+E003                 STEPHEN              JUNIOR PROGRAMER                      
+12-FEB-2012                         15000                                       
+                                                                                
+
+ECODE                ENAME                POST                                  
+-------------------- -------------------- --------------------                  
+DOJ                                SALARY                                       
+------------------------------ ----------                                       
+E004                 CLARK                CLARK                                 
+18-MARCH-2009                        6000                                       
+                                                                                
+E005                 PETER                SYSTEM ANYLIST                        
+11-JAN-2011                         65000                                       
+                                                                                
+
+SQL> SET LINE200
+SQL> SELECT* FROM EMPLOYEE_TABLE1;
+
+ECODE                ENAME                POST                 DOJ                                SALARY                                                                                                
+-------------------- -------------------- -------------------- ------------------------------ ----------                                                                                                
+E001                 JHON                 JUNIOR PROGARMER     10-OCT-2012                         20000                                                                                                
+E002                 MARK                 SENIOR PROGRAMER     20-FEB-2010                         55000                                                                                                
+E003                 STEPHEN              JUNIOR PROGRAMER     12-FEB-2012                         15000                                                                                                
+E004                 CLARK                CLARK                18-MARCH-2009                        6000                                                                                                
+E005                 PETER                SYSTEM ANYLIST       11-JAN-2011                         65000                                                                                                
+
+SQL> edit query1
+
+SQL> @query1
+
+1 row updated.
+
+SQL> SELECT* FROM EMPLOYEE_TABLE1;
+
+ECODE                ENAME                POST                 DOJ                                SALARY                                                                                                
+-------------------- -------------------- -------------------- ------------------------------ ----------                                                                                                
+E001                 JHON                 JUNIOR PROGARMER     10-OCT-2012                         20000                                                                                                
+E002                 MARK                 SENIOR PROGRAMER     20-FEB-2010                          5500                                                                                                
+E003                 STEPHEN              JUNIOR PROGRAMER     12-FEB-2012                         15000                                                                                                
+E004                 CLARK                CLARK                18-MARCH-2009                        6000                                                                                                
+E005                 PETER                SYSTEM ANYLIST       11-JAN-2011                         65000                                                                                                
+
+SQL> edit query1
+
+SQL> delete from employee_table where post='SENIOR PROGRAMER';
+
+0 rows deleted.
+
+SQL> delete from employee_table1 where post='SENIOR PROGRAMER';
+
+1 row deleted.
+
+SQL> SELECT* FROM EMPLOYEE_TABLE1;
+
+ECODE                ENAME                POST                 DOJ                                SALARY                                                                                                
+-------------------- -------------------- -------------------- ------------------------------ ----------                                                                                                
+E001                 JHON                 JUNIOR PROGARMER     10-OCT-2012                         20000                                                                                                
+E003                 STEPHEN              JUNIOR PROGRAMER     12-FEB-2012                         15000                                                                                                
+E004                 CLARK                CLARK                18-MARCH-2009                        6000                                                                                                
+E005                 PETER                SYSTEM ANYLIST       11-JAN-2011                         65000                                                                                                
+
+SQL> @insert_employee_table1
+Enter value for employee_code: E002
+Enter value for employee_name: MARK
+Enter value for employee_post: SENIOR PROGRAMER
+Enter value for date_of_joianig: 20-FEB-2012
+Enter value for salary: 55000
+old   2: values('&Employee_code','&Employee_name','&Employee_post','&Date_of_joianig',&Salary)
+new   2: values('E002','MARK','SENIOR PROGRAMER','20-FEB-2012',55000)
+
+1 row created.
+
+SQL> SELECT* FROM EMPLOYEE_TABLE1;
+
+ECODE                ENAME                POST                 DOJ                                SALARY                                                                                                
+-------------------- -------------------- -------------------- ------------------------------ ----------                                                                                                
+E001                 JHON                 JUNIOR PROGARMER     10-OCT-2012                         20000                                                                                                
+E003                 STEPHEN              JUNIOR PROGRAMER     12-FEB-2012                         15000                                                                                                
+E004                 CLARK                CLARK                18-MARCH-2009                        6000                                                                                                
+E005                 PETER                SYSTEM ANYLIST       11-JAN-2011                         65000                                                                                                
+E002                 MARK                 SENIOR PROGRAMER     20-FEB-2012                         55000                                                                                                
+
+SQL> edit query1
+
+SQL> @query1
+
+1 row updated.
+
+SQL> SELECT* FROM EMPLOYEE_TABLE1;
+
+ECODE                ENAME                POST                 DOJ                                SALARY                                                                                                
+-------------------- -------------------- -------------------- ------------------------------ ----------                                                                                                
+E001                 JHON                 JUNIOR PROGARMER     10-OCT-2012                         20000                                                                                                
+E003                 STEPHEN              JUNIOR PROGRAMER     12-FEB-2012                         15000                                                                                                
+E004                 CLARK                CLARK                18-MARCH-2009                        6000                                                                                                
+E005                 PETER                SYSTEM ANYLIST       11-JAN-2011                         65000                                                                                                
+E002                 MARK                 SENIOR PROGRAMER     20-FEB-2012                         60500                                                                                                
+
+SQL> edit query1
+
+SQL> delete from employee_table1 where post='SENIOR PROGRAMER';
+
+1 row deleted.
+
+SQL> @insert_employee_table1
+Enter value for employee_code: E002
+Enter value for employee_name: MARK
+Enter value for employee_post: SENIOR PROGRAMER
+Enter value for date_of_joianig: 20-FEB-2012
+Enter value for salary: 50000
+old   2: values('&Employee_code','&Employee_name','&Employee_post','&Date_of_joianig',&Salary)
+new   2: values('E002','MARK','SENIOR PROGRAMER','20-FEB-2012',50000)
+
+1 row created.
+
+SQL> edit query2
+
+SQL> @query2
+ERROR:
+ORA-01756: quoted string not properly terminated 
+
+
+SQL> edit query2
+
+SQL> @query2
+
+1 row updated.
+
+SQL> SELECT* FROM EMPLOYEE_TABLE1;
+
+ECODE                ENAME                POST                 DOJ                                SALARY                                                                                                
+-------------------- -------------------- -------------------- ------------------------------ ----------                                                                                                
+E001                 JHON                 JUNIOR PROGARMER     10-OCT-2012                         20000                                                                                                
+E003                 STEPHEN              JUNIOR PROGRAMER     12-FEB-2012                         15000                                                                                                
+E004                 CLARK                CLARK                18-MARCH-2009                        6000                                                                                                
+E005                 PETER                SYSTEM ANYLIST       11-JAN-2011                         65000                                                                                                
+E002                 MARK                 SENIOR PROGRAMER     20-FEB-2012                         55000                                                                                                
+
+SQL> edit query2
+
+SQL> edit query3
+
+SQL> @query3
+
+1 row updated.
+
+SQL> SELECT* FROM EMPLOYEE_TABLE1;
+
+ECODE                ENAME                POST                 DOJ                                SALARY                                                                                                
+-------------------- -------------------- -------------------- ------------------------------ ----------                                                                                                
+E001                 JHON                 JUNIOR PROGARMER     10-OCT-2012                         20000                                                                                                
+E003                 STEPHEN              JUNIOR PROGRAMER     12-FEB-2012                         15000                                                                                                
+E004                 CLARK                EXECUTIVE            18-MARCH-2009                        7800                                                                                                
+E005                 PETER                SYSTEM ANYLIST       11-JAN-2011                         65000                                                                                                
+E002                 MARK                 SENIOR PROGRAMER     20-FEB-2012                         55000                                                                                                
+
+SQL> edit query3
+
+SQL> edit query4
+
+SQL> @query4
+
+1 row updated.
+
+SQL> SELECT* FROM EMPLOYEE_TABLE1;
+
+ECODE                ENAME                POST                 DOJ                                SALARY                                                                                                
+-------------------- -------------------- -------------------- ------------------------------ ----------                                                                                                
+E001                 JHON                 JUNIOR PROGARMER     10-OCT-2012                         20000                                                                                                
+E003                 STEPHEN              JUNIOR PROGRAMER     12-FEB-2012                         12000                                                                                                
+E004                 CLARK                EXECUTIVE            18-MARCH-2009                        7800                                                                                                
+E005                 PETER                SYSTEM ANYLIST       11-JAN-2011                         65000                                                                                                
+E002                 MARK                 SENIOR PROGRAMER     20-FEB-2012                         55000                                                                                                
+
+SQL> edit query4
+
+SQL> edit query5
+
+SQL> @query5
+
+1 row updated.
+
+SQL> SELECT* FROM EMPLOYEE_TABLE1;
+
+ECODE                ENAME                POST                 DOJ                                SALARY                                                                                                
+-------------------- -------------------- -------------------- ------------------------------ ----------                                                                                                
+E001                 JHON                 JUNIOR PROGARMER     10-OCT-2012                         20000                                                                                                
+E003                 STEPHEN              JUNIOR PROGRAMER     12-FEB-2012                          9600                                                                                                
+E004                 CLARK                EXECUTIVE            18-MARCH-2009                        7800                                                                                                
+E005                 PETER                SYSTEM ANYLIST       11-JAN-2011                         65000                                                                                                
+E002                 MARK                 SENIOR PROGRAMER     20-FEB-2012                         55000                                                                                                
+
+SQL> edit query4
+
+SQL> edit query6
+
+SQL> @query6
+	where doj between 1-feb-2012 and 29-fed-2012
+	                                    *
+ERROR at line 3:
+ORA-00904: "FED": invalid identifier 
+
+
+SQL> edit query6
+
+SQL> @query6
+	where doj between 1-FEB-2012 and 29-FEB-2012
+	                                    *
+ERROR at line 3:
+ORA-00904: "FEB": invalid identifier 
+
+
+SQL> edit query6
+
+SQL> @query6
+
+5 rows updated.
+
+SQL> SELECT* FROM EMPLOYEE_TABLE1;
+
+ECODE                ENAME                POST                 DOJ                                SALARY                                                                                                
+-------------------- -------------------- -------------------- ------------------------------ ----------                                                                                                
+E001                 JHON                 ASSISTAND PROGRAMER  10-OCT-2012                         23000                                                                                                
+E003                 STEPHEN              ASSISTAND PROGRAMER  12-FEB-2012                         11040                                                                                                
+E004                 CLARK                ASSISTAND PROGRAMER  18-MARCH-2009                        8970                                                                                                
+E005                 PETER                ASSISTAND PROGRAMER  11-JAN-2011                         74750                                                                                                
+E002                 MARK                 ASSISTAND PROGRAMER  20-FEB-2012                         63250                                                                                                
+
+SQL> edit query6
+
+SQL> @query6
+	where doj =between '1-FEB-2012' and '29-FEB-2012'
+	           *
+ERROR at line 3:
+ORA-00936: missing expression 
+
+
+SQL> edit query6
+
+SQL> edit query7
+
+SQL> EXIT

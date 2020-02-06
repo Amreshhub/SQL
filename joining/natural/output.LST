@@ -1,0 +1,88 @@
+SQL> CLEAR SCREEN
+
+SQL> EDIT QUERY3
+
+SQL> @QUERY3
+SP2-0734: unknown command beginning "sclect dir..." - rest of line ignored.
+SP2-0734: unknown command beginning "from direc..." - rest of line ignored.
+SP2-0734: unknown command beginning "where dire..." - rest of line ignored.
+SP2-0103: Nothing in SQL buffer to run.
+SQL> EDIT QUERY3
+
+SQL> @QUERY3
+
+DID        DNAME                DCITY                MOVI_ID                    
+---------- -------------------- -------------------- ----------                 
+MOVI_NAME            CATEGORY         COST R_DATE    STUDIO_ID                  
+-------------------- ---------- ---------- --------- ----------                 
+D002       MARK                 CHEENAI              M001                       
+PPP                  ACTION       70000000 12-DEC-11 S001                       
+                                                                                
+D002       MARK                 CHEENAI              M003                       
+RRR                  ACTION       90000000 18-FEB-12 S001                       
+                                                                                
+
+SQL> set linesize 100
+SQL> @QUERY3
+
+DID        DNAME                DCITY                MOVI_ID    MOVI_NAME            CATEGORY       
+---------- -------------------- -------------------- ---------- -------------------- ----------     
+      COST R_DATE    STUDIO_ID                                                                      
+---------- --------- ----------                                                                     
+D002       MARK                 CHEENAI              M001       PPP                  ACTION         
+  70000000 12-DEC-11 S001                                                                           
+                                                                                                    
+D002       MARK                 CHEENAI              M003       RRR                  ACTION         
+  90000000 18-FEB-12 S001                                                                           
+                                                                                                    
+
+SQL> set linesize 200
+SQL> @QUERY3
+
+DID        DNAME                DCITY                MOVI_ID    MOVI_NAME            CATEGORY         COST R_DATE    STUDIO_ID                                                                          
+---------- -------------------- -------------------- ---------- -------------------- ---------- ---------- --------- ----------                                                                         
+D002       MARK                 CHEENAI              M001       PPP                  ACTION       70000000 12-DEC-11 S001                                                                               
+D002       MARK                 CHEENAI              M003       RRR                  ACTION       90000000 18-FEB-12 S001                                                                               
+
+SQL> EDIT QUERY3
+
+SQL> edit query4
+
+SQL> clear screen
+
+SQL> @query4
+
+DID        DNAME                DCITY                                                                                                                                                                   
+---------- -------------------- --------------------                                                                                                                                                    
+D001       JHON                 MUMBAI                                                                                                                                                                  
+D001       JHON                 MUMBAI                                                                                                                                                                  
+D003       PETER                MUMBAI                                                                                                                                                                  
+D003       PETER                MUMBAI                                                                                                                                                                  
+
+SQL> edit query4
+
+SQL> edit query5
+
+SQL> @query5
+
+DID        DNAME                DCITY                                                                                                                                                                   
+---------- -------------------- --------------------                                                                                                                                                    
+D001       JHON                 MUMBAI                                                                                                                                                                  
+D002       MARK                 CHEENAI                                                                                                                                                                 
+D002       MARK                 CHEENAI                                                                                                                                                                 
+D003       PETER                MUMBAI                                                                                                                                                                  
+
+SQL> edit query5
+
+SQL> edit query6
+
+SQL> @query6
+
+STUDIO_ID            STUDIO_NAME                    STUDIO_CITY          MOVI_ID                                                                                                                        
+-------------------- ------------------------------ -------------------- ----------                                                                                                                     
+S002                 MEHBOOB                        MUMBAI               M004                                                                                                                           
+S003                 FILMCITY                       HEDRABAD             M005                                                                                                                           
+
+SQL> edit query6
+
+SQL> exit

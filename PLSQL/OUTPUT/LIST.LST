@@ -1,0 +1,185 @@
+SQL> CLEAR SCREEN
+
+SQL> EDIT PROGRAM3
+
+SQL> @PROGRAM3
+
+HELLOWORLD                                                                      
+PL/SQL PROGRAM RUNNING                                                          
+SQL> EDIT PROGRAM3
+
+SQL> EDIT PROGRAM4
+
+SQL> @PROGRAM4
+
+	dbms_output.put_line();
+	*
+ERROR at line 3:
+ORA-06550: line 3, column 2: 
+PLS-00306: wrong number or types of arguments in call to 'PUT_LINE' 
+ORA-06550: line 3, column 2: 
+PL/SQL: Statement ignored 
+ORA-06550: line 4, column 2: 
+PLS-00306: wrong number or types of arguments in call to 'PUT_LINE' 
+ORA-06550: line 4, column 2: 
+PL/SQL: Statement ignored 
+
+
+SQL> EDIT PROGRAM4
+
+SQL> @PROGRAM4
+
+This is too good                                                                
+This is too bad                                                                 
+SQL> EDIT PROGRAM4
+
+SQL> @PROGRAM4
+
+This is too good                                                                
+This is too bad                                                                 
+SQL> EDIT PROGRAM4
+
+SQL> @PROGRAM4
+
+This is too good                                                                
+\n                                                                              
+\n                                                                              
+This is too bad                                                                 
+SQL> EDIT PROGRAM4
+
+SQL> @PROGRAM4
+
+This is too good                                                                
+This is too bad                                                                 
+SQL> EDIT PROGRAM4
+
+SQL> @PROGRAM4
+
+This is too good                                                                
+This is too bad                                                                 
+SQL> EDIT PROGRAM4
+
+SQL> @PROGRAM4
+
+This is too good                                                                
+@@@@@@@@@@@@@@@@@@@                                                             
+@@@@@@@@@@@@@@@@@@@                                                             
+This is too bad                                                                 
+SQL> EDIT PROGRAM4
+
+SQL> @PROGRAM4
+
+	dbms_output.put_line();
+	*
+ERROR at line 4:
+ORA-06550: line 4, column 2: 
+PLS-00306: wrong number or types of arguments in call to 'PUT_LINE' 
+ORA-06550: line 4, column 2: 
+PL/SQL: Statement ignored 
+ORA-06550: line 5, column 2: 
+PLS-00306: wrong number or types of arguments in call to 'PUT_LINE' 
+ORA-06550: line 5, column 2: 
+PL/SQL: Statement ignored 
+
+
+SQL> EDIT PROGRAM4
+
+SQL> @PROGRAM4
+
+	dbms_output.put_line(\n'');
+	                     *
+ERROR at line 4:
+ORA-06550: line 4, column 23: 
+PLS-00103: Encountered the symbol "\" when expecting one of the following: 
+( ) - + case mod new not null others <an identifier> 
+<a double-quoted delimited-identifier> <a bind variable> 
+table avg count current exists max min prior sql stddev sum 
+variance execute multiset the both leading trailing forall 
+merge year month DAY_ hour minute second timezone_hour 
+timezone_minute timezone_region timezone_abbr time timestamp 
+interval date 
+<a string literal with character set specification> 
+ORA-06550: line 5, column 23: 
+PLS-00103: Encountered the symbol "\" when expecting one of the following: 
+( ) - + case mod new not null others <an identifier> 
+<a double-quoted delimited-identifier> <a bind variable> 
+table avg count current exists max min prio 
+
+
+SQL> EDIT PROGRAM4
+
+SQL> @PROGRAM4
+
+	dbms_output.put_line(''\n);
+	                       *
+ERROR at line 4:
+ORA-06550: line 4, column 25: 
+PLS-00103: Encountered the symbol "\" when expecting one of the following: 
+) , * & | = - + < / > at in is mod remainder not rem => .. 
+<an exponent (**)> <> or != or ~= >= <= <> and or like LIKE2_ 
+LIKE4_ LIKEC_ as between from using || multiset member 
+SUBMULTISET_ 
+The symbol ", was inserted before "\" to continue. 
+ORA-06550: line 5, column 25: 
+PLS-00103: Encountered the symbol "\" when expecting one of the following: 
+) , * & | = - + < / > at in is mod remainder not rem => .. 
+<an exponent (**)> <> or != or ~= >= <= <> and or like LIKE2_ 
+LIKE4_ LIKEC_ as between from us 
+
+
+SQL> EDIT PROGRAM4
+
+SQL> @PROGRAM4
+
+	dbms_output.put_line("\"'');
+	                        *
+ERROR at line 4:
+ORA-06550: line 4, column 26: 
+PLS-00103: Encountered the symbol "" when expecting one of the following: 
+. ( ) , * @ % & | = - + < / > at in is mod remainder not 
+range rem => .. <an exponent (**)> <> or != or ~= >= <= <> 
+and or like LIKE2_ LIKE4_ LIKEC_ as between from using || 
+multiset member SUBMULTISET_ 
+The symbol "," was substituted for "" to continue. 
+ORA-06550: line 5, column 26: 
+PLS-00103: Encountered the symbol "" when expecting one of the following: 
+. ( ) , * @ % & | = - + < / > at in is mod remainder not 
+range rem => .. <an exponent (**)> <> or != or ~= >= <= <> 
+and or like LIKE2_ LIKE4_ LIKEC_ as be 
+
+
+SQL> EDIT PROGRAM4
+
+SQL> @PROGRAM4
+
+ERROR:
+ORA-01756: quoted string not properly terminated 
+
+
+SQL> EDIT PROGRAM4
+
+SQL> @PROGRAM4
+
+This is too good                                                                
+This is too bad                                                                 
+SQL> EDIT PROGRAM4
+
+SQL> EDIT PROGRAM5
+
+SQL> @PROGRAM5
+SP2-0158: unknown SET option "server"
+
+ERROR:
+ORA-01756: quoted string not properly terminated 
+
+
+SQL> EDIT PROGRAM5
+
+SQL> @PROGRAM5
+SP2-0158: unknown SET option "server"
+
+Employee Code:-E001                                                             
+Employee Salary:-25000                                                          
+SQL> EDIT PROGRAM5
+
+SQL> exit

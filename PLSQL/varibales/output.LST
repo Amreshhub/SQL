@@ -1,0 +1,117 @@
+SQL> clear screen
+
+SQL> edit program1
+
+SQL> @program1
+
+	dbms_output.put_line('Enroll in program:-'||eporg);
+	                                            *
+ERROR at line 10:
+ORA-06550: line 10, column 46: 
+PLS-00201: identifier 'EPORG' must be declared 
+ORA-06550: line 10, column 2: 
+PL/SQL: Statement ignored 
+
+
+SQL> edit program1
+
+SQL> @program1
+
+declare
+*
+ERROR at line 1:
+ORA-06502: PL/SQL: numeric or value error: character string buffer too small 
+ORA-06512: at line 2 
+
+
+SQL> edit program1
+
+SQL> clear screen
+
+SQL> @program1
+
+declare
+*
+ERROR at line 1:
+ORA-06502: PL/SQL: numeric or value error: character string buffer too small 
+ORA-06512: at line 2 
+
+
+SQL> edit program1
+
+SQL> @program1
+
+fee number():=25000;
+           *
+ERROR at line 6:
+ORA-06550: line 6, column 12: 
+PLS-00103: Encountered the symbol ")" when expecting one of the following: 
+( - + case mod new not null others <an identifier> 
+<a double-quoted delimited-identifier> <a bind variable> avg 
+count current exists max min prior sql stddev sum variance 
+execute forall merge time timestamp interval date 
+<a string literal with character set specification> 
+<a number> <a single-quoted SQL string> pipe 
+<an alternatively-quoted string literal with character set specification> 
+<an alternatively-q 
+
+
+SQL> edit program1
+
+SQL> @program1
+
+declare
+*
+ERROR at line 1:
+ORA-06502: PL/SQL: numeric or value error: character string buffer too small 
+ORA-06512: at line 2 
+
+
+SQL> edit program1
+
+SQL> @program1
+
+Student name:-AMRESHSINGH                                                       
+Sex:-M                                                                          
+Enroll in program:-MCA                                                          
+Enroll Date:-10-JAN-13                                                          
+Fee:-25000                                                                      
+SQL> edit program1
+
+SQL> @program1
+
+Student name:-     AMRESHSINGH                                                  
+Sex:-              M                                                            
+Enroll in program:-MCA                                                          
+Enroll Date:-      10-JAN-13                                                    
+Fee:-              25000                                                        
+SQL> edit program1
+
+SQL> @program1
+
+	 dbms_output.put_line('Student name:-     '||sname);
+	                       *
+ERROR at line 9:
+ORA-06550: line 9, column 25: 
+PLS-00103: Encountered the symbol "STUDENT" when expecting one of the 
+following: 
+) , * & | = - + < / > at in is mod remainder not rem => .. 
+<an exponent (**)> <> or != or ~= >= <= <> and or like LIKE2_ 
+LIKE4_ LIKEC_ as between from using || multiset member 
+SUBMULTISET_ 
+
+
+SQL> edit program1
+
+SQL> @program1
+
+*******Information************                                                  
+Student name:-     AMRESHSINGH                                                  
+Sex:-              M                                                            
+Enroll in program:-MCA                                                          
+Enroll Date:-      10-JAN-13                                                    
+Fee:-              25000                                                        
+******************************                                                  
+SQL> edit program1
+
+SQL> exit

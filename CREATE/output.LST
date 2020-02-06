@@ -1,0 +1,137 @@
+SQL> clear screen
+
+SQL> selscet *from tab
+SP2-0734: unknown command beginning "selscet *f..." - rest of line ignored.
+SQL> select * from tab;
+
+TNAME                          TABTYPE  CLUSTERID                               
+------------------------------ ------- ----------                               
+STUD1                          TABLE                                            
+STUD2                          TABLE                                            
+MOVIES3                        TABLE                                            
+MOVIES4                        TABLE                                            
+STUDENT1                       TABLE                                            
+EMPLOYEE1                      TABLE                                            
+STUDENT2                       TABLE                                            
+STUDENT3                       TABLE                                            
+EMPLOYEE2                      TABLE                                            
+EMPLOYEE4                      TABLE                                            
+EMPLOYEE5                      TABLE                                            
+
+TNAME                          TABTYPE  CLUSTERID                               
+------------------------------ ------- ----------                               
+STUDENT4                       TABLE                                            
+EMPLOYEE                       TABLE                                            
+STUDENT                        TABLE                                            
+EMPLOYEE3                      TABLE                                            
+CHKEMP1                        TABLE                                            
+CHKEMP2                        TABLE                                            
+PRODUCT1                       TABLE                                            
+PRODUCT2                       TABLE                                            
+MOVIES1                        TABLE                                            
+MOVIES2                        TABLE                                            
+EMP1                           TABLE                                            
+
+TNAME                          TABTYPE  CLUSTERID                               
+------------------------------ ------- ----------                               
+PMT1                           TABLE                                            
+EMP2                           TABLE                                            
+PMT2                           TABLE                                            
+PAYMENTSECOND                  TABLE                                            
+STUDENTONE                     TABLE                                            
+RESULTONE                      TABLE                                            
+EMPLOYEE6                      TABLE                                            
+EMPLOYEE7                      TABLE                                            
+E1MPLOYEE7                     TABLE                                            
+EMPLOYEEONE                    TABLE                                            
+PAYMENTONE                     TABLE                                            
+
+TNAME                          TABTYPE  CLUSTERID                               
+------------------------------ ------- ----------                               
+EMPLOYEESECOND                 TABLE                                            
+
+34 rows selected.
+
+SQL> clear screen
+
+SQL> edit movies5;
+
+SQL> @movies5;
+movi_name varchar2(40) not null, type varchar2(20) constraint t_ck check(type in('suspesen','horror') not null,
+                                                                                                      *
+ERROR at line 3:
+ORA-00907: missing right parenthesis 
+
+
+SQL> edit movies5;
+
+SQL> @movies5;
+movi_name varchar2(40) not null, type varchar2(20) constraint t_ck check(type in('suspesen','horror') not null,
+                                                                                                      *
+ERROR at line 3:
+ORA-00907: missing right parenthesis 
+
+
+SQL> edit movies5;
+
+SQL> @movies5;
+
+Table created.
+
+SQL> desc movies5;
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ MOVI_ID                                   NOT NULL VARCHAR2(4)
+ MOVI_NAME                                 NOT NULL VARCHAR2(40)
+ TYPE                                      NOT NULL VARCHAR2(20)
+ COST                                      NOT NULL NUMBER(12,2)
+ RELESD_DATE                               NOT NULL DATE
+
+SQL> edit movies5;
+
+SQL> edit movies6;
+
+SQL> clear screen
+
+SQL> @movies6;
+
+Table created.
+
+SQL> desc movies6;
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ MOVI_ID                                   NOT NULL VARCHAR2(4)
+ MOVI_NAME                                 NOT NULL VARCHAR2(40)
+ TYPE                                      NOT NULL VARCHAR2(20)
+ COST                                      NOT NULL NUMBER(12,2)
+ RELESD_DATE                               NOT NULL DATE
+
+SQL> edit movies6;
+
+SQL> edit movies_simple_method;
+
+SQL> @movies_simple_method;
+relesed_date date rel_da_te_ck check(relesed_date<'1-jun-1990' or relesed_date>'31-dec-2000') not null)
+                  *
+ERROR at line 6:
+ORA-00907: missing right parenthesis 
+
+
+SQL> edit movies_simple_method;
+
+SQL> @movies_simple_method;
+
+Table created.
+
+SQL> desc movies_simple_method;
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ MOVI_ID                                   NOT NULL VARCHAR2(4)
+ MOVI_NAME                                 NOT NULL VARCHAR2(30)
+ TYPE                                      NOT NULL VARCHAR2(20)
+ COST                                      NOT NULL NUMBER(12,2)
+ RELESED_DATE                              NOT NULL DATE
+
+SQL> edit movies_simple_method;
+
+SQL> exit

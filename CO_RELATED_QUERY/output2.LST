@@ -1,0 +1,28 @@
+SQL> select*from tab;
+
+TNAME                          TABTYPE  CLUSTERID                               
+------------------------------ ------- ----------                               
+DIRECTORS                      TABLE                                            
+STUDIO                         TABLE                                            
+THEATRE                        TABLE                                            
+MOVIE                          TABLE                                            
+SHOWING                        TABLE                                            
+
+SQL> edit employee
+
+SQL> @employee
+(ecode varchar2 constraint co_pk primary key,ename varchar2(30) not null,
+                *
+ERROR at line 2:
+ORA-00906: missing left parenthesis 
+
+
+SQL> edit employee
+
+SQL> @employee
+
+Table created.
+
+SQL> edit insert_employee
+
+SQL> exit

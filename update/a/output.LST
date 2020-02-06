@@ -1,0 +1,588 @@
+SQL> clear screen
+
+SQL> select* from movies;
+select* from movies
+             *
+ERROR at line 1:
+ORA-00942: table or view does not exist 
+
+
+SQL> select * from tab;
+
+TNAME                          TABTYPE  CLUSTERID                               
+------------------------------ ------- ----------                               
+DIRECTORS                      TABLE                                            
+STUDIO                         TABLE                                            
+THEATRE                        TABLE                                            
+MOVIE                          TABLE                                            
+SHOWING                        TABLE                                            
+EMPLOYEE_TABLE                 TABLE                                            
+EMPLOYEE                       TABLE                                            
+PAYMENT                        TABLE                                            
+EMPLOYEE_TABLE1                TABLE                                            
+STUDENT                        TABLE                                            
+MARKS                          TABLE                                            
+
+TNAME                          TABTYPE  CLUSTERID                               
+------------------------------ ------- ----------                               
+RESULT                         TABLE                                            
+RESULTS                        TABLE                                            
+EMPLOYEE_ALL                   TABLE                                            
+COSTLIS_MOVIE                  TABLE                                            
+BIN$uGIbAs5HS6u94kTd7q6RqQ==$0 TABLE                                            
+CHIPEST_MOVIE                  TABLE                                            
+
+17 rows selected.
+
+SQL> select* from movie;
+
+MID        MOVIE_NAME                     CATEGORY                              
+---------- ------------------------------ ------------------------------        
+      COST RELEASED_ DID        STUDIO_ID                                       
+---------- --------- ---------- ----------                                      
+M001       PPP                            ACTION                                
+  90000000 13-JAN-10 D002       S003                                            
+                                                                                
+M002       QQQ                            DRAMA                                 
+  60000000 20-FEB-10 D001       S001                                            
+                                                                                
+M003       RRR                            ACTION                                
+  70000000 15-JAN-09 D002       S003                                            
+                                                                                
+
+MID        MOVIE_NAME                     CATEGORY                              
+---------- ------------------------------ ------------------------------        
+      COST RELEASED_ DID        STUDIO_ID                                       
+---------- --------- ---------- ----------                                      
+M004       TTT                            DRAMA                                 
+  40000000 18-FEB-09 D001       S001                                            
+                                                                                
+M005       SSS                            SUSPENCE                              
+  30000000 02-JAN-00 D003       S001                                            
+                                                                                
+M006       NNN                            SUSPENCE                              
+  10000000 05-JUL-08 D001       S001                                            
+                                                                                
+
+6 rows selected.
+
+SQL> set line200
+SQL> select* from movie;
+
+MID        MOVIE_NAME                     CATEGORY                             COST RELEASED_ DID        STUDIO_ID                                                                                      
+---------- ------------------------------ ------------------------------ ---------- --------- ---------- ----------                                                                                     
+M001       PPP                            ACTION                           90000000 13-JAN-10 D002       S003                                                                                           
+M002       QQQ                            DRAMA                            60000000 20-FEB-10 D001       S001                                                                                           
+M003       RRR                            ACTION                           70000000 15-JAN-09 D002       S003                                                                                           
+M004       TTT                            DRAMA                            40000000 18-FEB-09 D001       S001                                                                                           
+M005       SSS                            SUSPENCE                         30000000 02-JAN-00 D003       S001                                                                                           
+M006       NNN                            SUSPENCE                         10000000 05-JUL-08 D001       S001                                                                                           
+
+6 rows selected.
+
+SQL> edit query1
+
+SQL> @query1
+update diroctor
+       *
+ERROR at line 1:
+ORA-00942: table or view does not exist 
+
+
+SQL> edit query1
+
+SQL> @query1
+update diroctors
+       *
+ERROR at line 1:
+ORA-00942: table or view does not exist 
+
+
+SQL> select *from tab;
+
+TNAME                          TABTYPE  CLUSTERID                                                                                                                                                       
+------------------------------ ------- ----------                                                                                                                                                       
+DIRECTORS                      TABLE                                                                                                                                                                    
+STUDIO                         TABLE                                                                                                                                                                    
+THEATRE                        TABLE                                                                                                                                                                    
+MOVIE                          TABLE                                                                                                                                                                    
+SHOWING                        TABLE                                                                                                                                                                    
+EMPLOYEE_TABLE                 TABLE                                                                                                                                                                    
+EMPLOYEE                       TABLE                                                                                                                                                                    
+PAYMENT                        TABLE                                                                                                                                                                    
+EMPLOYEE_TABLE1                TABLE                                                                                                                                                                    
+STUDENT                        TABLE                                                                                                                                                                    
+MARKS                          TABLE                                                                                                                                                                    
+
+TNAME                          TABTYPE  CLUSTERID                                                                                                                                                       
+------------------------------ ------- ----------                                                                                                                                                       
+RESULT                         TABLE                                                                                                                                                                    
+RESULTS                        TABLE                                                                                                                                                                    
+EMPLOYEE_ALL                   TABLE                                                                                                                                                                    
+COSTLIS_MOVIE                  TABLE                                                                                                                                                                    
+BIN$uGIbAs5HS6u94kTd7q6RqQ==$0 TABLE                                                                                                                                                                    
+CHIPEST_MOVIE                  TABLE                                                                                                                                                                    
+
+17 rows selected.
+
+SQL> edit query1
+
+SQL> @query1
+set city='MUMBAI'
+    *
+ERROR at line 2:
+ORA-00904: "CITY": invalid identifier 
+
+
+SQL> select* from directors;
+
+DID        DNAME                          DCITY                                                                                                                                                         
+---------- ------------------------------ ------------------------------                                                                                                                                
+D001       JHON                           MUMBAI                                                                                                                                                        
+D002       MARK                           CHENNAI                                                                                                                                                       
+D003       STEPHEN                        KOLKATA                                                                                                                                                       
+D004       PETER                          DELHI                                                                                                                                                         
+
+SQL> edit query1
+
+SQL> @query1
+
+1 row updated.
+
+SQL> select* from directors;
+
+DID        DNAME                          DCITY                                                                                                                                                         
+---------- ------------------------------ ------------------------------                                                                                                                                
+D001       JHON                           MUMBAI                                                                                                                                                        
+D002       MARK                           MUMBAI                                                                                                                                                        
+D003       STEPHEN                        KOLKATA                                                                                                                                                       
+D004       PETER                          DELHI                                                                                                                                                         
+
+SQL> edit query1
+
+SQL> edit query2
+
+SQL> @query2
+
+2 rows updated.
+
+SQL> select* from movie;
+
+MID        MOVIE_NAME                     CATEGORY                             COST RELEASED_ DID        STUDIO_ID                                                                                      
+---------- ------------------------------ ------------------------------ ---------- --------- ---------- ----------                                                                                     
+M001       PPP                            ACTION                           90000000 13-JAN-10 D002       S003                                                                                           
+M002       QQQ                            DRAMA                            60000000 20-FEB-10 D001       S001                                                                                           
+M003       RRR                            ACTION                           70000000 15-JAN-09 D002       S003                                                                                           
+M004       TTT                            DRAMA                            48000000 18-FEB-09 D001       S001                                                                                           
+M005       SSS                            SUSPENCE                         30000000 02-JAN-00 D003       S001                                                                                           
+M006       NNN                            SUSPENCE                         12000000 05-JUL-08 D001       S001                                                                                           
+
+6 rows selected.
+
+SQL> edit query2
+
+SQL> edit query3
+
+SQL> @query3
+			groupby mid
+			        *
+ERROR at line 4:
+ORA-00907: missing right parenthesis 
+
+
+SQL> edit query3
+
+SQL> @query3
+
+2 rows updated.
+
+SQL> select* from movie;
+
+MID        MOVIE_NAME                     CATEGORY                             COST RELEASED_ DID        STUDIO_ID                                                                                      
+---------- ------------------------------ ------------------------------ ---------- --------- ---------- ----------                                                                                     
+M001       PPP                            ACTION                          117000000 13-JAN-10 D002       S003                                                                                           
+M002       QQQ                            DRAMA                            78000000 20-FEB-10 D001       S001                                                                                           
+M003       RRR                            ACTION                           70000000 15-JAN-09 D002       S003                                                                                           
+M004       TTT                            DRAMA                            48000000 18-FEB-09 D001       S001                                                                                           
+M005       SSS                            SUSPENCE                         30000000 02-JAN-00 D003       S001                                                                                           
+M006       NNN                            SUSPENCE                         12000000 05-JUL-08 D001       S001                                                                                           
+
+6 rows selected.
+
+SQL> edit query3
+
+SQL> edit query4
+
+SQL> @query4
+
+3 rows updated.
+
+SQL> edit query4
+
+SQL> edit query4
+
+SQL> edit query4_second_method
+
+SQL> @query4_second_method
+
+0 rows updated.
+
+SQL> edit query4_second_method
+
+SQL> edit query5
+
+SQL> @query5
+
+4 rows updated.
+
+SQL> edit query5
+
+SQL> edit query5_second_method
+
+SQL> @query5_second_method
+
+3 rows updated.
+
+SQL> delete *from movie;
+delete *from movie
+       *
+ERROR at line 1:
+ORA-00903: invalid table name 
+
+
+SQL> delete from movie;
+
+6 rows deleted.
+
+SQL> select *from movie;
+
+no rows selected
+
+SQL> @insert_movie
+SP2-0310: unable to open file "insert_movie.sql"
+SQL> @insert_movie
+SP2-0310: unable to open file "insert_movie.sql"
+SQL> @insert_movie
+Enter value for mid: MOO1
+Enter value for movie_name: PPP
+Enter value for category: ACTION
+Enter value for cost: 90000000
+Enter value for relesed_date: 13-JAN-2010
+Enter value for did: DOO2
+Enter value for studio_id: 
+old   2: values('&mid','&movie_name','&Category',&cost,'&Relesed_date','&did','&Studio_id')
+new   2: values('MOO1','PPP','ACTION',90000000,'13-JAN-2010','DOO2','')
+insert into movie
+*
+ERROR at line 1:
+ORA-02291: integrity constraint (AMRESH.DDDIDFK) violated - parent key not found 
+
+
+SQL> 
+SQL> @insert_movie
+Enter value for mid: M001
+Enter value for movie_name: PPP
+Enter value for category: ACTION
+Enter value for cost: 90000000
+Enter value for relesed_date: 13-JAN-2010
+Enter value for did: D002
+Enter value for studio_id: S003
+old   2: values('&mid','&movie_name','&Category',&cost,'&Relesed_date','&did','&Studio_id')
+new   2: values('M001','PPP','ACTION',90000000,'13-JAN-2010','D002','S003')
+
+1 row created.
+
+SQL> /
+Enter value for mid: M002
+Enter value for movie_name: QQQ
+Enter value for category: DRAMA
+Enter value for cost: 60000000
+Enter value for relesed_date: 20-FEB-2011
+Enter value for did: D001
+Enter value for studio_id: S001
+old   2: values('&mid','&movie_name','&Category',&cost,'&Relesed_date','&did','&Studio_id')
+new   2: values('M002','QQQ','DRAMA',60000000,'20-FEB-2011','D001','S001')
+
+1 row created.
+
+SQL> /
+Enter value for mid: M003
+Enter value for movie_name: RRR
+Enter value for category: ACTION
+Enter value for cost: 70000000
+Enter value for relesed_date: 15-JAN-2009
+Enter value for did: D002
+Enter value for studio_id: S003
+old   2: values('&mid','&movie_name','&Category',&cost,'&Relesed_date','&did','&Studio_id')
+new   2: values('M003','RRR','ACTION',70000000,'15-JAN-2009','D002','S003')
+
+1 row created.
+
+SQL> /
+Enter value for mid: M004
+Enter value for movie_name: TTT
+Enter value for category: DRAMA
+Enter value for cost: 40000000
+Enter value for relesed_date: 18-DEC-2009
+Enter value for did: D001
+Enter value for studio_id: S001
+old   2: values('&mid','&movie_name','&Category',&cost,'&Relesed_date','&did','&Studio_id')
+new   2: values('M004','TTT','DRAMA',40000000,'18-DEC-2009','D001','S001')
+
+1 row created.
+
+SQL> /
+Enter value for mid: M005
+Enter value for movie_name: SSS
+Enter value for category: SUSPENCE
+Enter value for cost: 30000000
+Enter value for relesed_date: 2-JAN-2000
+Enter value for did: D003
+Enter value for studio_id: S001
+old   2: values('&mid','&movie_name','&Category',&cost,'&Relesed_date','&did','&Studio_id')
+new   2: values('M005','SSS','SUSPENCE',30000000,'2-JAN-2000','D003','S001')
+
+1 row created.
+
+SQL> /
+Enter value for mid: M006
+Enter value for movie_name: NNN
+Enter value for category: SUSPENCE
+Enter value for cost: 10000000
+Enter value for relesed_date: 5-JUL-2008
+Enter value for did: D001
+Enter value for studio_id: S001
+old   2: values('&mid','&movie_name','&Category',&cost,'&Relesed_date','&did','&Studio_id')
+new   2: values('M006','NNN','SUSPENCE',10000000,'5-JUL-2008','D001','S001')
+
+1 row created.
+
+SQL> SELECT *FROM MOVIE;
+
+MID        MOVIE_NAME                     CATEGORY                             COST RELEASED_ DID        STUDIO_ID                                                                                      
+---------- ------------------------------ ------------------------------ ---------- --------- ---------- ----------                                                                                     
+M001       PPP                            ACTION                           90000000 13-JAN-10 D002       S003                                                                                           
+M002       QQQ                            DRAMA                            60000000 20-FEB-11 D001       S001                                                                                           
+M003       RRR                            ACTION                           70000000 15-JAN-09 D002       S003                                                                                           
+M004       TTT                            DRAMA                            40000000 18-DEC-09 D001       S001                                                                                           
+M005       SSS                            SUSPENCE                         30000000 02-JAN-00 D003       S001                                                                                           
+M006       NNN                            SUSPENCE                         10000000 05-JUL-08 D001       S001                                                                                           
+
+6 rows selected.
+
+SQL> edit query6
+
+SQL> @query6
+			cost<=all(select distinct coll from showing)
+			                                           *
+ERROR at line 5:
+ORA-00907: missing right parenthesis 
+
+
+SQL> edit query6
+
+SQL> @query6
+
+0 rows updated.
+
+SQL> edit query6
+
+SQL> @query6
+
+0 rows updated.
+
+SQL> edit query6
+
+SQL> @query6
+			cost<=all(select distinct coll from showing))
+			*
+ERROR at line 5:
+ORA-00907: missing right parenthesis 
+
+
+SQL> edit query6
+
+SQL> @query6
+
+0 rows updated.
+
+SQL> SELECT *FROM MOVIE;
+
+MID        MOVIE_NAME                     CATEGORY                             COST RELEASED_ DID        STUDIO_ID                                                                                      
+---------- ------------------------------ ------------------------------ ---------- --------- ---------- ----------                                                                                     
+M001       PPP                            ACTION                           90000000 13-JAN-10 D002       S003                                                                                           
+M002       QQQ                            DRAMA                            60000000 20-FEB-11 D001       S001                                                                                           
+M003       RRR                            ACTION                           70000000 15-JAN-09 D002       S003                                                                                           
+M004       TTT                            DRAMA                            40000000 18-DEC-09 D001       S001                                                                                           
+M005       SSS                            SUSPENCE                         30000000 02-JAN-00 D003       S001                                                                                           
+M006       NNN                            SUSPENCE                         10000000 05-JUL-08 D001       S001                                                                                           
+
+6 rows selected.
+
+SQL> edit query6
+
+SQL> @query6
+			where movie.mid=showing.mid and
+			                *
+ERROR at line 4:
+ORA-00904: "SHOWING"."MID": invalid identifier 
+
+
+SQL> edit query6
+
+SQL> @query6
+			cost<=all(select distinct coll from showing))
+			                                            *
+ERROR at line 6:
+ORA-00907: missing right parenthesis 
+
+
+SQL> edit query6
+
+SQL> @query6
+
+0 rows updated.
+
+SQL> edit query6
+
+SQL> @query6
+
+0 rows updated.
+
+SQL> edit query6
+
+SQL> @query6
+
+6 rows updated.
+
+SQL> SELECT *FROM MOVIE;
+
+MID        MOVIE_NAME                     CATEGORY                             COST RELEASED_ DID        STUDIO_ID                                                                                      
+---------- ------------------------------ ------------------------------ ---------- --------- ---------- ----------                                                                                     
+M001       PPP                            ACTION                           99000000 13-JAN-10 D002       S003                                                                                           
+M002       QQQ                            DRAMA                            66000000 20-FEB-11 D001       S001                                                                                           
+M003       RRR                            ACTION                           77000000 15-JAN-09 D002       S003                                                                                           
+M004       TTT                            DRAMA                            44000000 18-DEC-09 D001       S001                                                                                           
+M005       SSS                            SUSPENCE                         33000000 02-JAN-00 D003       S001                                                                                           
+M006       NNN                            SUSPENCE                         11000000 05-JUL-08 D001       S001                                                                                           
+
+6 rows selected.
+
+SQL> delete from movie;
+
+6 rows deleted.
+
+SQL> @insert_movie
+Enter value for mid: M001
+Enter value for movie_name: PPP
+Enter value for category: ACTION
+Enter value for cost: 90000000
+Enter value for relesed_date: 13-JAN-2010
+Enter value for did: D002
+Enter value for studio_id: S003
+old   2: values('&mid','&movie_name','&Category',&cost,'&Relesed_date','&did','&Studio_id')
+new   2: values('M001','PPP','ACTION',90000000,'13-JAN-2010','D002','S003')
+
+1 row created.
+
+SQL> /
+Enter value for mid: M002
+Enter value for movie_name: QQQ
+Enter value for category: DRAMA
+Enter value for cost: 60000000
+Enter value for relesed_date: 20-FEB-2011
+Enter value for did: D001
+Enter value for studio_id: S001
+old   2: values('&mid','&movie_name','&Category',&cost,'&Relesed_date','&did','&Studio_id')
+new   2: values('M002','QQQ','DRAMA',60000000,'20-FEB-2011','D001','S001')
+
+1 row created.
+
+SQL> /
+Enter value for mid: M003
+Enter value for movie_name: RRR
+Enter value for category: ACTION
+Enter value for cost: 70000000
+Enter value for relesed_date: 15-JAN-2009
+Enter value for did: D002
+Enter value for studio_id: S003
+old   2: values('&mid','&movie_name','&Category',&cost,'&Relesed_date','&did','&Studio_id')
+new   2: values('M003','RRR','ACTION',70000000,'15-JAN-2009','D002','S003')
+
+1 row created.
+
+SQL> /
+Enter value for mid: M004
+Enter value for movie_name: TTT
+Enter value for category: DRAMA
+Enter value for cost: 40000000
+Enter value for relesed_date: 18-DEC-2009
+Enter value for did: D001
+Enter value for studio_id: S001
+old   2: values('&mid','&movie_name','&Category',&cost,'&Relesed_date','&did','&Studio_id')
+new   2: values('M004','TTT','DRAMA',40000000,'18-DEC-2009','D001','S001')
+
+1 row created.
+
+SQL> /
+Enter value for mid: M005
+Enter value for movie_name: SSS
+Enter value for category: SUSPENCE
+Enter value for cost: 30000000
+Enter value for relesed_date: 2-JAN-2000
+Enter value for did: D003
+Enter value for studio_id: S001
+old   2: values('&mid','&movie_name','&Category',&cost,'&Relesed_date','&did','&Studio_id')
+new   2: values('M005','SSS','SUSPENCE',30000000,'2-JAN-2000','D003','S001')
+
+1 row created.
+
+SQL> /
+Enter value for mid: M006
+Enter value for movie_name: NNN
+Enter value for category: SUSPENCE
+Enter value for cost: 10000000
+Enter value for relesed_date: 5-JUL-2008
+Enter value for did: D001
+Enter value for studio_id: S001
+old   2: values('&mid','&movie_name','&Category',&cost,'&Relesed_date','&did','&Studio_id')
+new   2: values('M006','NNN','SUSPENCE',10000000,'5-JUL-2008','D001','S001')
+
+1 row created.
+
+SQL> EDIT QUERY6
+
+SQL> @query6
+			where cost (select min(coll) from showing))
+			            *
+ERROR at line 4:
+ORA-00936: missing expression 
+
+
+SQL> edit query6
+
+SQL> @query6
+
+0 rows updated.
+
+SQL> EDIT QUERY6
+
+SQL> @query6
+
+6 rows updated.
+
+SQL> EDIT QUERY6
+
+SQL> query8
+SP2-0042: unknown command "query8" - rest of line ignored.
+SQL> edit query8
+
+SQL> edit query8
+
+SQL> @query8
+
+4 rows updated.
+
+SQL> edit query8
+
+SQL> exit

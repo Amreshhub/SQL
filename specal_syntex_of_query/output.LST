@@ -1,0 +1,499 @@
+SQL> clrear screen
+SP2-0734: unknown command beginning "clrear scr..." - rest of line ignored.
+SQL> clear screen
+
+SQL> edit student
+
+SQL> @student
+
+Table created.
+
+SQL> edit insert_student
+
+SQL> @insert_student
+Enter value for student_enrollment_no: S001
+Enter value for student_name: JHON
+Enter value for enroll_in_program: BCA
+Enter value for semester: VI
+old   2: values('&Student_Enrollment_no','&Student_name','&Enroll_in_program','&Semester')
+new   2: values('S001','JHON','BCA','VI')
+
+1 row created.
+
+SQL> /
+Enter value for student_enrollment_no: S002
+Enter value for student_name: MARK
+Enter value for enroll_in_program: BCA
+Enter value for semester: VI
+old   2: values('&Student_Enrollment_no','&Student_name','&Enroll_in_program','&Semester')
+new   2: values('S002','MARK','BCA','VI')
+
+1 row created.
+
+SQL> /
+Enter value for student_enrollment_no: S003
+Enter value for student_name: PETER
+Enter value for enroll_in_program: BCA
+Enter value for semester: VI
+old   2: values('&Student_Enrollment_no','&Student_name','&Enroll_in_program','&Semester')
+new   2: values('S003','PETER','BCA','VI')
+
+1 row created.
+
+SQL> /
+Enter value for student_enrollment_no: S004
+Enter value for student_name: STEPHEN
+Enter value for enroll_in_program: BCA
+Enter value for semester: VI
+old   2: values('&Student_Enrollment_no','&Student_name','&Enroll_in_program','&Semester')
+new   2: values('S004','STEPHEN','BCA','VI')
+
+1 row created.
+
+SQL> SET LINE200
+SQL> SELECT *FROM STUDENT
+  2  
+SQL> SELECT *FROM STUDENT;
+
+ENROLL_NO  SNAME                ENROLL_IN_ SEMESTER                                                                                                                                                     
+---------- -------------------- ---------- ----------                                                                                                                                                   
+S001       JHON                 BCA        VI                                                                                                                                                           
+S002       MARK                 BCA        VI                                                                                                                                                           
+S003       PETER                BCA        VI                                                                                                                                                           
+S004       STEPHEN              BCA        VI                                                                                                                                                           
+
+SQL> CLEAR SCREEN
+
+SQL> EDIT MARKS
+
+SQL> @MARKS
+(enroll_no varchar2(10) constraint enrollf_kreferences student on delete casecade not null,
+                        *
+ERROR at line 2:
+ORA-02253: constraint specification not allowed here 
+
+
+SQL> EDIT MARKS
+
+SQL> @MARKS
+(enroll_no varchar2(10) constraint enrollf_k references student on delete casecade not null,
+                                                                          *
+ERROR at line 2:
+ORA-00905: missing keyword 
+
+
+SQL> EDIT MARKS
+
+SQL> @MARKS
+
+Table created.
+
+SQL> CLEAR SCREEN
+
+SQL> edit insert_marks
+
+SQL> @insert_marks
+Enter value for enrollment_no: S001
+Enter value for cpp: 50
+Enter value for java: 50
+Enter value for oracle: 53
+old   2: values('&Enrollment_no',&Cpp,&java,&oracle)
+new   2: values('S001',50,50,53)
+
+1 row created.
+
+SQL> /
+Enter value for enrollment_no: S002
+Enter value for cpp: 31
+Enter value for java: 30
+Enter value for oracle: 24
+old   2: values('&Enrollment_no',&Cpp,&java,&oracle)
+new   2: values('S002',31,30,24)
+
+1 row created.
+
+SQL> /
+Enter value for enrollment_no: S003
+Enter value for cpp: 41
+Enter value for java: 42
+Enter value for oracle: 40
+old   2: values('&Enrollment_no',&Cpp,&java,&oracle)
+new   2: values('S003',41,42,40)
+
+1 row created.
+
+SQL> SELECT *FROM MARKS;
+
+ENROLL_NO         CPP       JAVA     ORACLE                                                                                                                                                             
+---------- ---------- ---------- ----------                                                                                                                                                             
+S001               50         50         53                                                                                                                                                             
+S002               31         30         24                                                                                                                                                             
+S003               41         42         40                                                                                                                                                             
+
+SQL> CLEAR SCREEN
+
+SQL> edit query1
+
+SQL> @query1
+
+Table created.
+
+SQL> select *from result
+  2  
+SQL> select *from result;
+
+ENROLL_NO         CPP       JAVA     ORACLE                                                                                                                                                             
+---------- ---------- ---------- ----------                                                                                                                                                             
+S001               50         50         53                                                                                                                                                             
+S002               31         30         24                                                                                                                                                             
+S003               41         42         40                                                                                                                                                             
+
+SQL> edit query1
+
+SQL> 
+SQL> edit query2
+
+SQL> @query2
+	where student.enroll_no=marks.enroll_no
+	*
+ERROR at line 4:
+ORA-00923: FROM keyword not found where expected 
+
+
+SQL> edit query2
+
+SQL> @query2
+select studetn.*,cpp,java,oracle,cpp+java+oracle as total
+               *
+ERROR at line 3:
+ORA-00904: "STUDETN": invalid identifier 
+
+
+SQL> edit query2
+
+SQL> @query2
+
+Table created.
+
+SQL> select *from results;
+
+ENROLL_NO  SNAME                ENROLL_IN_ SEMESTER          CPP       JAVA     ORACLE      TOTAL                                                                                                       
+---------- -------------------- ---------- ---------- ---------- ---------- ---------- ----------                                                                                                       
+S001       JHON                 BCA        VI                 50         50         53        153                                                                                                       
+S002       MARK                 BCA        VI                 31         30         24         85                                                                                                       
+S003       PETER                BCA        VI                 41         42         40        123                                                                                                       
+
+SQL> edit query2
+
+SQL> edit employee
+
+SQL> @employee
+create table employee
+             *
+ERROR at line 1:
+ORA-00955: name is already used by an existing object 
+
+
+SQL> edit employee
+
+SQL> @employee_all
+SP2-0310: unable to open file "employee_all.sql"
+SQL> @employee_all
+
+Table created.
+
+SQL> edit insert_employee_all
+
+SQL> @insert_employee_all
+Enter value for employee_code: E001
+Enter value for employee_name: SHYAM
+Enter value for salary: 30000
+old   2: values('&Employee_code','&Employee_name',&salary)
+new   2: values('E001','SHYAM',30000)
+
+1 row created.
+
+SQL> /
+Enter value for employee_code: E002
+Enter value for employee_name: MOHAN
+Enter value for salary: 40000
+old   2: values('&Employee_code','&Employee_name',&salary)
+new   2: values('E002','MOHAN',40000)
+
+1 row created.
+
+SQL> /
+Enter value for employee_code: E004
+Enter value for employee_name: RAM
+Enter value for salary: 20000
+old   2: values('&Employee_code','&Employee_name',&salary)
+new   2: values('E004','RAM',20000)
+
+1 row created.
+
+SQL> /
+Enter value for employee_code: E003
+Enter value for employee_name: AMRESH
+Enter value for salary: 100000
+old   2: values('&Employee_code','&Employee_name',&salary)
+new   2: values('E003','AMRESH',100000)
+
+1 row created.
+
+SQL> select *from employee_all;
+
+ECODE      ENAME                    SALARY                                                                                                                                                              
+---------- -------------------- ----------                                                                                                                                                              
+E001       SHYAM                     30000                                                                                                                                                              
+E002       MOHAN                     40000                                                                                                                                                              
+E004       RAM                       20000                                                                                                                                                              
+E003       AMRESH                   100000                                                                                                                                                              
+
+SQL> edit query1_employee_all
+
+SQL> @query1_employee_all
+
+Table created.
+
+SQL> edit query1_employee_all
+
+SQL> edit query1_step2_employee_all
+
+SQL> @query1_step2_employee_all
+delete from employee
+*
+ERROR at line 1:
+ORA-02292: integrity constraint (AMRESH.CO_FFK) violated - child record found 
+
+
+SQL> edit query1_step2_employee_all
+
+SQL> @query1_step2_employee_all
+delete *from employee
+       *
+ERROR at line 1:
+ORA-00903: invalid table name 
+
+
+SQL> edit query1_step2_employee_all
+
+SQL> @query1_step2_employee_all
+delete *from employee_all
+       *
+ERROR at line 1:
+ORA-00903: invalid table name 
+
+
+SQL> delete from employee_all;
+
+4 rows deleted.
+
+SQL> select *from Employee_all;
+
+no rows selected
+
+SQL> @query1_step2_employee_all
+delete *from employee_all
+       *
+ERROR at line 1:
+ORA-00903: invalid table name 
+
+
+SQL> edit query1_step2_employee_all
+
+SQL> edit query1_step3_employee_all
+
+SQL> @query1_step3_employee_all
+as
+*
+ERROR at line 2:
+ORA-00926: missing VALUES keyword 
+
+
+SQL> edit query1_step3_employee_all
+
+SQL> @query1_step3_employee_all
+as
+*
+ERROR at line 3:
+ORA-00936: missing expression 
+
+
+SQL> edit query1_step3_employee_all
+
+SQL> @query1_step3_employee_all
+as
+*
+ERROR at line 2:
+ORA-00926: missing VALUES keyword 
+
+
+SQL> insert into employee_all
+  2  as
+  3  select *from emp order by ecode;
+as
+*
+ERROR at line 2:
+ORA-00926: missing VALUES keyword 
+
+
+SQL> edit query1_step3_employee_all
+
+SQL> @query1_step3_employee_all
+insert into employee
+            *
+ERROR at line 1:
+ORA-00947: not enough values 
+
+
+SQL> edit query1_step3_employee_all
+
+SQL> @query1_step3_employee_all
+
+4 rows created.
+
+SQL> edit query1_step3_employee_all
+
+SQL> drop emp;
+drop emp
+     *
+ERROR at line 1:
+ORA-00950: invalid DROP option 
+
+
+SQL> drop table emp;
+
+Table dropped.
+
+SQL> select* from employee_all;
+
+ECODE      ENAME                    SALARY                                                                                                                                                              
+---------- -------------------- ----------                                                                                                                                                              
+E001       SHYAM                     30000                                                                                                                                                              
+E002       MOHAN                     40000                                                                                                                                                              
+E003       AMRESH                   100000                                                                                                                                                              
+E004       RAM                       20000                                                                                                                                                              
+
+SQL> edit query1_movie_table
+
+SQL> @query1_movie_table
+select * from director
+              *
+ERROR at line 3:
+ORA-00942: table or view does not exist 
+
+
+SQL> edit query1_movie_table
+
+SQL> @query1_movie_table
+select * from dirocter
+              *
+ERROR at line 3:
+ORA-00942: table or view does not exist 
+
+
+SQL> select * from tab;
+
+TNAME                          TABTYPE  CLUSTERID                                                                                                                                                       
+------------------------------ ------- ----------                                                                                                                                                       
+DIRECTORS                      TABLE                                                                                                                                                                    
+STUDIO                         TABLE                                                                                                                                                                    
+THEATRE                        TABLE                                                                                                                                                                    
+MOVIE                          TABLE                                                                                                                                                                    
+SHOWING                        TABLE                                                                                                                                                                    
+EMPLOYEE                       TABLE                                                                                                                                                                    
+PAYMENT                        TABLE                                                                                                                                                                    
+STUDENT                        TABLE                                                                                                                                                                    
+MARKS                          TABLE                                                                                                                                                                    
+RESULT                         TABLE                                                                                                                                                                    
+RESULTS                        TABLE                                                                                                                                                                    
+
+TNAME                          TABTYPE  CLUSTERID                                                                                                                                                       
+------------------------------ ------- ----------                                                                                                                                                       
+EMPLOYEE_ALL                   TABLE                                                                                                                                                                    
+BIN$uGIbAs5HS6u94kTd7q6RqQ==$0 TABLE                                                                                                                                                                    
+
+13 rows selected.
+
+SQL> edit query1_movie_table
+
+SQL> @query1_movie_table
+		where did in(select max(cost) from movie))
+		      *
+ERROR at line 5:
+ORA-01722: invalid number 
+
+
+SQL> edit query1_movie_table
+
+SQL> @query1_movie_table
+
+Table created.
+
+SQL> select *from tab;
+
+TNAME                          TABTYPE  CLUSTERID                                                                                                                                                       
+------------------------------ ------- ----------                                                                                                                                                       
+DIRECTORS                      TABLE                                                                                                                                                                    
+STUDIO                         TABLE                                                                                                                                                                    
+THEATRE                        TABLE                                                                                                                                                                    
+MOVIE                          TABLE                                                                                                                                                                    
+SHOWING                        TABLE                                                                                                                                                                    
+EMPLOYEE                       TABLE                                                                                                                                                                    
+PAYMENT                        TABLE                                                                                                                                                                    
+STUDENT                        TABLE                                                                                                                                                                    
+MARKS                          TABLE                                                                                                                                                                    
+RESULT                         TABLE                                                                                                                                                                    
+RESULTS                        TABLE                                                                                                                                                                    
+
+TNAME                          TABTYPE  CLUSTERID                                                                                                                                                       
+------------------------------ ------- ----------                                                                                                                                                       
+EMPLOYEE_ALL                   TABLE                                                                                                                                                                    
+COSTLIS_MOVIE                  TABLE                                                                                                                                                                    
+BIN$uGIbAs5HS6u94kTd7q6RqQ==$0 TABLE                                                                                                                                                                    
+
+14 rows selected.
+
+SQL> select *from costlis_movie;
+
+DID        DNAME                          DCITY                                                                                                                                                         
+---------- ------------------------------ ------------------------------                                                                                                                                
+D002       MARK                           CHENNAI                                                                                                                                                       
+
+SQL> edit query1_movie_table
+
+SQL> edit query2_movie_table
+
+SQL> edit query1_movie_table
+
+SQL> edit query2_movie_table
+
+SQL> @query2_movie_table
+create table costlis_movie
+             *
+ERROR at line 1:
+ORA-00955: name is already used by an existing object 
+
+
+SQL> edit query2_movie_table
+
+SQL> @query2_movie_table
+		where cost<=(select distinct cost from movie))
+		             *
+ERROR at line 5:
+ORA-01427: single-row subquery returns more than one row 
+
+
+SQL> edit query2_movie_table
+
+SQL> @query2_movie_table
+
+Table created.
+
+SQL> select* from chipest_movie;
+
+DID        DNAME                          DCITY                                                                                                                                                         
+---------- ------------------------------ ------------------------------                                                                                                                                
+D001       JHON                           MUMBAI                                                                                                                                                        
+
+SQL> exit

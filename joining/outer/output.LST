@@ -1,0 +1,168 @@
+SQL> clear screen
+
+SQL> edit director3
+
+SQL> @director3
+
+Table created.
+
+SQL> edit insert_director3
+
+SQL> @insert_director3
+Enter value for director_id: D001
+Enter value for director_name: JHON
+Enter value for director_city: MUMBAI
+old   2: values('&director_id','&director_name','&director_city')
+new   2: values('D001','JHON','MUMBAI')
+
+1 row created.
+
+SQL> /
+Enter value for director_id: D002
+Enter value for director_name: MARK
+Enter value for director_city: CHEENAI
+old   2: values('&director_id','&director_name','&director_city')
+new   2: values('D002','MARK','CHEENAI')
+
+1 row created.
+
+SQL> /
+Enter value for director_id: PETER
+Enter value for director_name: 
+Enter value for director_city: 
+old   2: values('&director_id','&director_name','&director_city')
+new   2: values('PETER','','')
+values('PETER','','')
+               *
+ERROR at line 2:
+ORA-01400: cannot insert NULL into ("AMRESH"."DIRECTOR3"."DNAME") 
+
+
+SQL> /
+Enter value for director_id: D003
+Enter value for director_name: PETER
+Enter value for director_city: KOLKOTA
+old   2: values('&director_id','&director_name','&director_city')
+new   2: values('D003','PETER','KOLKOTA')
+
+1 row created.
+
+SQL> SELECT *FROM DIRECTOR3;
+
+DID        DNAME                                                                
+---------- ------------------------------                                       
+DCITY                                                                           
+----------------------------------------                                        
+D001       JHON                                                                 
+MUMBAI                                                                          
+                                                                                
+D002       MARK                                                                 
+CHEENAI                                                                         
+                                                                                
+D003       PETER                                                                
+KOLKOTA                                                                         
+                                                                                
+
+SQL> SET LINESIZE 200
+SQL> SELECT *FROM DIRECTOR3;
+
+DID        DNAME                          DCITY                                                                                                                                                         
+---------- ------------------------------ ----------------------------------------                                                                                                                      
+D001       JHON                           MUMBAI                                                                                                                                                        
+D002       MARK                           CHEENAI                                                                                                                                                       
+D003       PETER                          KOLKOTA                                                                                                                                                       
+
+SQL> EDIT MOVIE_TABLE3
+
+SQL> @MOVIE_TABLE3
+
+Table created.
+
+SQL> edit insert_movie_table3
+
+SQL> @insert_movie_table3
+Enter value for movie_id: M001
+Enter value for movie_name: PPP
+Enter value for category: ACTION
+Enter value for cost: 90000000
+Enter value for relesed_date: 18-JAN-2010
+Enter value for director_id: D002
+old   2: values('&movie_id','&movie_name','&category',&cost,'&relesed_date','&director_id')
+new   2: values('M001','PPP','ACTION',90000000,'18-JAN-2010','D002')
+
+1 row created.
+
+SQL> /
+Enter value for movie_id: M002
+Enter value for movie_name: QQQ
+Enter value for category: DRAMA
+Enter value for cost: 60000000
+Enter value for relesed_date: 22-DEC-2010
+Enter value for director_id: D001
+old   2: values('&movie_id','&movie_name','&category',&cost,'&relesed_date','&director_id')
+new   2: values('M002','QQQ','DRAMA',60000000,'22-DEC-2010','D001')
+
+1 row created.
+
+SQL> SELECT *FROM MOVIE_TABLE3
+  2  
+SQL> SELECT *FROM MOVIE_TABLE3;
+
+MID        MOVIE_NAME           CATEGORY                   COST R_DATE    DID                                                                                                                           
+---------- -------------------- -------------------- ---------- --------- ----------                                                                                                                    
+M001       PPP                  ACTION                 90000000 18-JAN-10 D002                                                                                                                          
+M002       QQQ                  DRAMA                  60000000 22-DEC-10 D001                                                                                                                          
+
+SQL> EDIT QUERY1
+
+SQL> *QUERY1
+SP2-0042: unknown command "*QUERY1" - rest of line ignored.
+SQL> @QUERY1
+where director3.did=movie_table3(+)
+                    *
+ERROR at line 3:
+ORA-00904: "MOVIE_TABLE3": invalid identifier 
+
+
+SQL> EDIT QUERY1
+
+SQL> @QUERY1
+
+DID        DNAME                          DCITY                                    MID        MOVIE_NAME           CATEGORY                   COST R_DATE                                               
+---------- ------------------------------ ---------------------------------------- ---------- -------------------- -------------------- ---------- ---------                                            
+D002       MARK                           CHEENAI                                  M001       PPP                  ACTION                 90000000 18-JAN-10                                            
+D001       JHON                           MUMBAI                                   M002       QQQ                  DRAMA                  60000000 22-DEC-10                                            
+D003       PETER                          KOLKOTA                                                                                                                                                       
+
+SQL> set linesize 200
+SQL> @QUERY1
+
+DID        DNAME                          DCITY                                    MID        MOVIE_NAME           CATEGORY                   COST R_DATE                                               
+---------- ------------------------------ ---------------------------------------- ---------- -------------------- -------------------- ---------- ---------                                            
+D002       MARK                           CHEENAI                                  M001       PPP                  ACTION                 90000000 18-JAN-10                                            
+D001       JHON                           MUMBAI                                   M002       QQQ                  DRAMA                  60000000 22-DEC-10                                            
+D003       PETER                          KOLKOTA                                                                                                                                                       
+
+SQL> set linesize300
+SQL> @QUERY1
+
+DID        DNAME                          DCITY                                    MID        MOVIE_NAME           CATEGORY                   COST R_DATE                                                                                                                                                   
+---------- ------------------------------ ---------------------------------------- ---------- -------------------- -------------------- ---------- ---------                                                                                                                                                
+D002       MARK                           CHEENAI                                  M001       PPP                  ACTION                 90000000 18-JAN-10                                                                                                                                                
+D001       JHON                           MUMBAI                                   M002       QQQ                  DRAMA                  60000000 22-DEC-10                                                                                                                                                
+D003       PETER                          KOLKOTA                                                                                                                                                                                                                                                           
+
+SQL> set linesize400
+SQL> @QUERY1
+
+DID        DNAME                          DCITY                                    MID        MOVIE_NAME           CATEGORY                   COST R_DATE                                                                                                                                                                                                                                                       
+---------- ------------------------------ ---------------------------------------- ---------- -------------------- -------------------- ---------- ---------                                                                                                                                                                                                                                                    
+D002       MARK                           CHEENAI                                  M001       PPP                  ACTION                 90000000 18-JAN-10                                                                                                                                                                                                                                                    
+D001       JHON                           MUMBAI                                   M002       QQQ                  DRAMA                  60000000 22-DEC-10                                                                                                                                                                                                                                                    
+D003       PETER                          KOLKOTA                                                                                                                                                                                                                                                                                                                                                               
+
+SQL> EDIT QUERY1
+
+SQL> exiit
+SP2-0042: unknown command "exiit" - rest of line ignored.
+SQL> exit

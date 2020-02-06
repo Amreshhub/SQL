@@ -1,0 +1,111 @@
+SQL> edit query1
+
+SQL> @query1
+ where cost>=(select cost from movie)
+              *
+ERROR at line 2:
+ORA-01427: single-row subquery returns more than one row 
+
+
+SQL> edit query1
+
+SQL> @query1
+ where cost>=(select distinct cost from movie)
+              *
+ERROR at line 2:
+ORA-01427: single-row subquery returns more than one row 
+
+
+SQL> edit query1
+
+SQL> edit query1
+
+SQL> @query1
+
+MID        MOVIE_NAME                     CATEGORY                              
+---------- ------------------------------ ------------------------------        
+      COST RELEASED_ DID        STUDIO_ID                                       
+---------- --------- ---------- ----------                                      
+M001       PPP                            ACTION                                
+  90000000 13-JAN-10 D002       S003                                            
+                                                                                
+
+SQL> set line200
+SQL> @query1
+
+MID        MOVIE_NAME                     CATEGORY                             COST RELEASED_ DID        STUDIO_ID                                                                                      
+---------- ------------------------------ ------------------------------ ---------- --------- ---------- ----------                                                                                     
+M001       PPP                            ACTION                           90000000 13-JAN-10 D002       S003                                                                                           
+
+SQL> edit query1
+
+SQL> edit query1
+
+SQL> edit query2
+
+SQL> @query2
+
+MID        MOVIE_NAME                     CATEGORY                             COST RELEASED_ DID        STUDIO_ID                                                                                      
+---------- ------------------------------ ------------------------------ ---------- --------- ---------- ----------                                                                                     
+M006       NNN                            SUSPENCE                         10000000 05-JUL-08 D001       S001                                                                                           
+
+SQL> edit query3
+
+SQL> @query3
+               where cost>=all(select distinct cost from movie)
+                                                              *
+ERROR at line 3:
+ORA-00907: missing right parenthesis 
+
+
+SQL> edit query3
+
+SQL> @query3
+select *from diroctors
+             *
+ERROR at line 1:
+ORA-00942: table or view does not exist 
+
+
+SQL> edit query3
+
+SQL> @query3
+select *from diroctor
+             *
+ERROR at line 1:
+ORA-00942: table or view does not exist 
+
+
+SQL> select *from tab;
+
+TNAME                          TABTYPE  CLUSTERID                                                                                                                                                       
+------------------------------ ------- ----------                                                                                                                                                       
+DIRECTORS                      TABLE                                                                                                                                                                    
+STUDIO                         TABLE                                                                                                                                                                    
+THEATRE                        TABLE                                                                                                                                                                    
+MOVIE                          TABLE                                                                                                                                                                    
+SHOWING                        TABLE                                                                                                                                                                    
+EMPLOYEE                       TABLE                                                                                                                                                                    
+PAYMENT                        TABLE                                                                                                                                                                    
+
+7 rows selected.
+
+SQL> edit query3
+
+SQL> @query3
+
+DID        DNAME                          DCITY                                                                                                                                                         
+---------- ------------------------------ ------------------------------                                                                                                                                
+D002       MARK                           CHENNAI                                                                                                                                                       
+
+SQL> edit query3
+
+SQL> edit query4
+
+SQL> @query4
+
+DID        DNAME                          DCITY                                                                                                                                                         
+---------- ------------------------------ ------------------------------                                                                                                                                
+D001       JHON                           MUMBAI                                                                                                                                                        
+
+SQL> exit
